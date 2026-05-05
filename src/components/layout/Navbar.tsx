@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { NAV_LINKS, SITE_NAME } from "../../utils/constants";
+import { CONTACT, NAV_LINKS, SITE_NAME } from "../../utils/constants";
 import { Button } from "../ui/Button";
+import logo from "../../../logo.jpg";
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,11 +19,15 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div className="flex-shrink-0" whileHover={{ scale: 1.05 }}>
-            <a
-              href="#"
-              className="text-2xl font-display font-bold gradient-text"
-            >
-              {SITE_NAME}
+            <a href="#" className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt={`${SITE_NAME} logo`}
+                className="h-10 w-10 object-contain rounded-full"
+              />
+              <span className="text-xl font-display font-bold gradient-text">
+                {SITE_NAME}
+              </span>
             </a>
           </motion.div>
 
@@ -42,8 +47,14 @@ export const Navbar: React.FC = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex md:items-center md:gap-4">
-            <Button variant="primary" size="sm">
-              Get Started
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => {
+                window.location.href = CONTACT.phoneLink;
+              }}
+            >
+              Call {CONTACT.phone}
             </Button>
           </div>
 
@@ -72,8 +83,15 @@ export const Navbar: React.FC = () => {
               </a>
             ))}
             <div className="pt-4">
-              <Button variant="primary" size="sm" className="w-full">
-                Get Started
+              <Button
+                variant="primary"
+                size="sm"
+                className="w-full"
+                onClick={() => {
+                  window.location.href = CONTACT.phoneLink;
+                }}
+              >
+                Call {CONTACT.phone}
               </Button>
             </div>
           </motion.div>

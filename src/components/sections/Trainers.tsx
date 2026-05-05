@@ -18,13 +18,13 @@ export const Trainers: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-accent mb-4 inline-block">Expert Team</div>
+          <div className="badge-accent mb-4 inline-block">Coaching Team</div>
           <h2 className="section-title">
             Meet Your <span className="gradient-text">Coaches</span>
           </h2>
           <p className="section-subtitle">
-            Certified professionals with years of experience transforming bodies
-            and minds.
+            Friendly coaches for personal training, nutrition consulting, and
+            youth classes.
           </p>
         </motion.div>
 

@@ -1,15 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Facebook,
-  Instagram,
-  Twitter,
-  Linkedin,
-} from "lucide-react";
-import { SITE_NAME, NAV_LINKS } from "../../utils/constants";
+import { Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { CONTACT, NAV_LINKS, SITE_NAME, SITE_TAGLINE } from "../../utils/constants";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -37,9 +29,7 @@ export const Footer: React.FC = () => {
             <h3 className="text-xl font-display font-bold gradient-text mb-4">
               {SITE_NAME}
             </h3>
-            <p className="text-gray-400 text-sm mb-4">
-              Transform your body. Elevate your mind. Dominate your goals.
-            </p>
+            <p className="text-gray-400 text-sm mb-4">{SITE_TAGLINE}</p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <motion.a
@@ -73,14 +63,14 @@ export const Footer: React.FC = () => {
 
           {/* Memberships */}
           <div>
-            <h4 className="font-semibold mb-4 text-white">Memberships</h4>
+            <h4 className="font-semibold mb-4 text-white">Training Options</h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#pricing"
                   className="text-gray-400 hover:text-primary transition-colors text-sm"
                 >
-                  Foundation
+                  Private Lessons
                 </a>
               </li>
               <li>
@@ -88,7 +78,7 @@ export const Footer: React.FC = () => {
                   href="#pricing"
                   className="text-gray-400 hover:text-primary transition-colors text-sm"
                 >
-                  Elite
+                  Personal Training
                 </a>
               </li>
               <li>
@@ -96,15 +86,7 @@ export const Footer: React.FC = () => {
                   href="#pricing"
                   className="text-gray-400 hover:text-primary transition-colors text-sm"
                 >
-                  Apex
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-primary transition-colors text-sm"
-                >
-                  Corporate
+                  Youth Classes
                 </a>
               </li>
             </ul>
@@ -115,25 +97,18 @@ export const Footer: React.FC = () => {
             <h4 className="font-semibold mb-4 text-white">Contact</h4>
             <div className="space-y-3">
               <a
-                href="mailto:hello@elite.fit"
-                className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors text-sm"
-              >
-                <Mail size={16} />
-                hello@elite.fit
-              </a>
-              <a
-                href="tel:+1234567890"
+                href={CONTACT.phoneLink}
                 className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors text-sm"
               >
                 <Phone size={16} />
-                (123) 456-7890
+                {CONTACT.phone}
               </a>
               <div className="flex items-start gap-2 text-gray-400 text-sm">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
                 <span>
-                  123 Fitness Ave
+                  {CONTACT.addressLine1}
                   <br />
-                  New York, NY 10001
+                  {CONTACT.addressLine2}
                 </span>
               </div>
             </div>

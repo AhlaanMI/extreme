@@ -1,20 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { SITE_NAME } from "../../utils/constants";
-
 export const TrustStrip: React.FC = () => {
   const testimonials = [
-    { name: "Forbes", title: '\"Best Gym in NYC\"' },
-    { name: "New York Times", title: '\"Elite Performance Awards\"' },
-    { name: "Men's Fitness", title: '\"Top 10 Gyms USA\"' },
-    { name: "Entrepreneur", title: '\"Transformation Leaders\"' },
+    { name: "Private Lessons", title: "One-on-one coaching" },
+    { name: "Personal Training", title: "Custom training plans" },
+    { name: "Nutrition Consulting", title: "Healthy habits support" },
+    { name: "Youth Classes", title: "Safe, energetic sessions" },
   ];
 
   return (
     <section className="py-12 md:py-16 bg-gradient-to-r from-dark-950 via-dark-900 to-dark-950 border-y border-white border-opacity-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-gray-400 text-sm mb-8 uppercase tracking-wider font-semibold">
-          Trusted by Champions & Featured In
+          Programs at Extreme Fitness Center
         </p>
 
         <motion.div

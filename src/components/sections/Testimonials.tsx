@@ -30,7 +30,7 @@ export const Testimonials: React.FC = () => {
         >
           <div className="badge-accent mb-4 inline-block">Testimonials</div>
           <h2 className="section-title">
-            Hear From Our <span className="gradient-text">Elite Members</span>
+            Hear From Our <span className="gradient-text">Members</span>
           </h2>
         </motion.div>
 

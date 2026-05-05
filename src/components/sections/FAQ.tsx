@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { FAQ } from "../../utils/constants";
+import { CONTACT, FAQ } from "../../utils/constants";
 
 export const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -88,10 +88,10 @@ export const FAQSection: React.FC = () => {
         >
           <p className="text-gray-400 mb-4">Still have questions?</p>
           <a
-            href="mailto:hello@elite.fit"
+            href={CONTACT.phoneLink}
             className="text-primary hover:text-accent transition-colors font-semibold"
           >
-            Contact our team →
+            Call {CONTACT.phone} →
           </a>
         </motion.div>
       </div>

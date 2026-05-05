@@ -15,13 +15,12 @@ export const Transformation: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-accent mb-4 inline-block">Real Results</div>
+          <div className="badge-accent mb-4 inline-block">Member Progress</div>
           <h2 className="section-title">
-            Member <span className="gradient-text">Transformations</span>
+            Training <span className="gradient-text">Journeys</span>
           </h2>
           <p className="section-subtitle">
-            See what our members have achieved with elite training and
-            dedication.
+            Consistent coaching and support help members build healthy habits.
           </p>
         </motion.div>
 

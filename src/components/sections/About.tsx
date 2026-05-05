@@ -12,25 +12,24 @@ export const About: React.FC = () => {
   const benefits = [
     {
       icon: Award,
-      title: "Elite Trainers",
+      title: "Personal Training",
       description:
-        "ISSA & NASM certified professionals with 10+ years experience",
+        "Coaches who tailor workouts to your goals and fitness level",
     },
     {
       icon: Users,
-      title: "Tight Community",
-      description: "Network with high-performers and like-minded achievers",
+      title: "Youth Classes",
+      description: "Safe, energetic sessions for younger members",
     },
     {
       icon: Zap,
-      title: "Proven Results",
-      description:
-        "Science-backed programs with measurable outcomes in 90 days",
+      title: "Nutrition Consulting",
+      description: "Practical guidance to support healthy progress",
     },
     {
       icon: Check,
-      title: "24/7 Support",
-      description: "Round-the-clock assistance via phone, email, and chat",
+      title: "Supportive Environment",
+      description: "Friendly coaching and motivation every session",
     },
   ];
 
@@ -61,9 +60,11 @@ export const About: React.FC = () => {
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              <div className="text-3xl font-bold gradient-text mb-2">98%</div>
+              <div className="text-3xl font-bold gradient-text mb-2">
+                All Ages
+              </div>
               <p className="text-sm text-gray-300">
-                Members achieve their goals
+                Programs for every fitness level
               </p>
             </motion.div>
           </motion.div>
@@ -80,18 +81,18 @@ export const About: React.FC = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
             >
-              <span className="badge-accent">Why Elite Performance</span>
+              <span className="badge-accent">Why Extreme Fitness Center</span>
             </motion.div>
 
             <h2 className="section-title mb-6">
-              Built For <span className="gradient-text">Champions</span>
+              Built For <span className="gradient-text">Every Goal</span>
             </h2>
 
             <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              We're not a typical gym. Elite Performance is a transformation hub
-              for serious athletes and achievers. Our personalized approach
-              combines cutting-edge training science with premium facilities and
-              world-class coaching.
+              Extreme Fitness Center in Mawanella offers private lessons,
+              personal training, nutrition consulting, youth classes, body
+              building, fitness training, and weight training. Our coaches focus
+              on safe progress, proper form, and confidence.
             </p>
 
             {/* Benefits Grid */}

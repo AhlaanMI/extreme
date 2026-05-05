@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { MEMBERSHIPS } from "../../utils/constants";
+import { CONTACT, MEMBERSHIPS } from "../../utils/constants";
 import { Button } from "../ui/Button";
 import { container, item } from "../../utils/animations";
 
@@ -17,13 +17,12 @@ export const Pricing: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-accent mb-4 inline-block">Pricing</div>
+          <div className="badge-accent mb-4 inline-block">Training Options</div>
           <h2 className="section-title">
-            Choose Your <span className="gradient-text">Path</span>
+            Choose Your <span className="gradient-text">Program</span>
           </h2>
           <p className="section-subtitle">
-            All memberships include 24/7 gym access. Pick the level of coaching
-            that fits your goals.
+            Call us for current rates and scheduling.
           </p>
         </motion.div>
 
@@ -94,7 +93,7 @@ export const Pricing: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Money Back Guarantee */}
+        {/* Contact Note */}
         <motion.div
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -103,10 +102,7 @@ export const Pricing: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <p className="text-gray-400 text-lg">
-            💯 Not seeing results in 90 days?{" "}
-            <span className="text-white font-semibold">
-              Money-back guarantee.
-            </span>
+            📞 Call {CONTACT.phone} for pricing details and availability.
           </p>
         </motion.div>
       </div>

@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
 import { container, item, fadeInUp } from "../../utils/animations";
+import { CONTACT } from "../../utils/constants";
 
 export const Hero: React.FC = () => {
   return (
@@ -24,7 +25,7 @@ export const Hero: React.FC = () => {
           {/* Badge */}
           <motion.div variants={item} className="mb-6">
             <Badge variant="accent">
-              🔥 Limited Founder Offer: 40% Off First Month
+              Mawanella Training Hub
             </Badge>
           </motion.div>
 
@@ -33,9 +34,9 @@ export const Hero: React.FC = () => {
             variants={fadeInUp}
             className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-tight text-balance"
           >
-            <span className="gradient-text">Transform</span> Your Body,
+            <span className="gradient-text">Extreme</span> Fitness Center
             <br />
-            <span className="gradient-text">Dominate</span> Your Goals
+            Train Stronger, Live Healthier
           </motion.h1>
 
           {/* Subheadline */}
@@ -43,9 +44,9 @@ export const Hero: React.FC = () => {
             variants={fadeInUp}
             className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 text-balance"
           >
-            Join elite performers building championship-level bodies. Premium
-            training, personalized coaching, and a community of winners. Results
-            in 90 days or your money back.
+            Private lessons, personal training, nutrition consulting, youth
+            classes, body building, fitness training, and weight training in one
+            supportive space.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -59,18 +60,24 @@ export const Hero: React.FC = () => {
               className="group"
               onClick={() =>
                 document
-                  .getElementById("pricing")
+                  .getElementById("services")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              Start Free Trial
+              View Services
               <ArrowRight
                 className="group-hover:translate-x-2 transition-transform"
                 size={20}
               />
             </Button>
-            <Button variant="outline" size="lg" icon={<Play size={20} />}>
-              Watch Demo
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => {
+                window.location.href = CONTACT.phoneLink;
+              }}
+            >
+              Call {CONTACT.phone}
             </Button>
           </motion.div>
 
@@ -79,19 +86,10 @@ export const Hero: React.FC = () => {
             <div className="relative aspect-video rounded-2xl overflow-hidden glass-dark border border-primary border-opacity-30">
               <img
                 src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=600&fit=crop"
-                alt="Premium gym facility"
+                alt="Extreme Fitness Center training space"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
-              <button className="absolute inset-0 flex items-center justify-center group">
-                <motion.div
-                  className="w-20 h-20 rounded-full bg-primary text-dark-950 flex items-center justify-center"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Play size={32} fill="currentColor" />
-                </motion.div>
-              </button>
             </div>
           </motion.div>
 
@@ -102,21 +100,21 @@ export const Hero: React.FC = () => {
           >
             <div>
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-                5000+
+                7
               </div>
-              <p className="text-gray-400 text-sm">Members Transformed</p>
+              <p className="text-gray-400 text-sm">Training Services</p>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-                98%
+                All Ages
               </div>
-              <p className="text-gray-400 text-sm">Satisfaction Rate</p>
+              <p className="text-gray-400 text-sm">Youth Classes</p>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-                15+
+                1:1
               </div>
-              <p className="text-gray-400 text-sm">Expert Trainers</p>
+              <p className="text-gray-400 text-sm">Private Lessons</p>
             </div>
           </motion.div>
         </motion.div>

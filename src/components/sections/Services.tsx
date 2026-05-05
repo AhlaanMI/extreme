@@ -21,12 +21,10 @@ export const Services: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="badge-accent mb-4 inline-block">Our Services</div>
-          <h2 className="section-title gradient-text">
-            Elite Training Programs
-          </h2>
+          <h2 className="section-title gradient-text">Training Services</h2>
           <p className="section-subtitle">
-            From personalized one-on-one coaching to high-energy group classes,
-            we have the program for your goals.
+            Choose from private lessons, personal training, nutrition consulting,
+            youth classes, body building, fitness training, and weight training.
           </p>
         </motion.div>
 
