@@ -9,37 +9,38 @@ export const FinalCTA: React.FC = () => {
   return (
     <section className="section bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Background Animation */}
         <div className="absolute inset-0 -z-10 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary opacity-10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary opacity-10 rounded-full blur-3xl" />
         </div>
 
         <motion.div
-          className="glass rounded-3xl p-8 md:p-16 border-primary border-opacity-50 text-center"
+          className="premium-border rounded-3xl p-8 md:p-16 border-primary border-opacity-40 text-center"
           variants={container}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* Content */}
           <motion.div variants={item} className="mb-6">
-            <Badge variant="accent">Get Started</Badge>
+            <Badge variant="accent" className="uppercase tracking-widest">
+              Ready to Dominate Your Category
+            </Badge>
           </motion.div>
 
           <motion.h2
             variants={item}
             className="text-4xl md:text-5xl font-display font-bold mb-4 text-white"
           >
-            Ready to Start Training?
+            Let&apos;s Build a Fitness Brand
+            <br />
+            Clients Instantly Trust
           </motion.h2>
 
           <motion.p
             variants={item}
             className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
           >
-            Call to book a private lesson, personal training, or nutrition
-            consulting session. Youth classes and fitness training are available
-            for all levels.
+            From elite coaching services to premium perception, this experience is
+            designed to attract high-intent clients and convert faster.
           </motion.p>
 
           <motion.div
@@ -53,7 +54,7 @@ export const FinalCTA: React.FC = () => {
                 window.location.href = CONTACT.phoneLink;
               }}
             >
-              Call {CONTACT.phone}
+              Start With a Call
             </Button>
             <Button
               variant="outline"
@@ -64,7 +65,7 @@ export const FinalCTA: React.FC = () => {
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              View Services
+              View Signature Programs
             </Button>
           </motion.div>
 

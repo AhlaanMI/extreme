@@ -10,6 +10,18 @@
   body {
     @apply bg-dark-950 text-white overflow-x-hidden;
     font-family: "Inter", system-ui, sans-serif;
+    background-image:
+      radial-gradient(
+        circle at 15% 10%,
+        rgba(0, 212, 255, 0.08),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 85% 25%,
+        rgba(0, 255, 136, 0.05),
+        transparent 38%
+      ),
+      linear-gradient(180deg, #050505 0%, #090909 100%);
   }
 
   h1,
@@ -26,10 +38,12 @@
   /* Glassmorphism */
   .glass {
     @apply backdrop-blur-md bg-white bg-opacity-5 border border-white border-opacity-10;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   .glass-dark {
-    @apply backdrop-blur-md bg-dark-900 bg-opacity-40 border border-white border-opacity-5;
+    @apply backdrop-blur-md bg-dark-900 bg-opacity-50 border border-white border-opacity-10;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   }
 
   /* Gradient Text */
@@ -52,11 +66,13 @@
 
   /* Buttons */
   .btn {
-    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   .btn-primary {
     @apply bg-primary text-dark-950 hover:bg-primary-light glow-blue hover:glow-blue-lg;
+    background-image: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+    box-shadow: 0 10px 32px rgba(0, 212, 255, 0.25);
   }
 
   .btn-secondary {
@@ -73,7 +89,7 @@
 
   /* Cards */
   .card {
-    @apply glass rounded-xl p-6 transition-all duration-300 hover:shadow-glow-lg;
+    @apply glass rounded-2xl p-6 transition-all duration-300 hover:shadow-glow-lg;
   }
 
   .card-dark {
@@ -105,6 +121,16 @@
   /* Container */
   .container-max {
     @apply max-w-7xl mx-auto;
+  }
+
+  .premium-border {
+    @apply border border-white border-opacity-10;
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.02) 40%,
+      rgba(255, 255, 255, 0.01) 100%
+    );
   }
 
   /* Text utilities */

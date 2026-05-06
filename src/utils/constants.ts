@@ -1,5 +1,5 @@
 export const SITE_NAME = "Extreme Fitness Center";
-export const SITE_TAGLINE = "Train Stronger. Live Healthier.";
+export const SITE_TAGLINE = "Premium Coaching. Measurable Results.";
 
 export const CONTACT = {
   phone: "071 537 7857",

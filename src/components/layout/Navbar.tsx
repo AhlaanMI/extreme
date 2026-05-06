@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 import { CONTACT, NAV_LINKS, SITE_NAME } from "../../utils/constants";
 import { Button } from "../ui/Button";
 import logo from "../../../logo.jpg";
@@ -10,7 +10,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 w-full z-50 glass border-b border-white border-opacity-10"
+      className="fixed top-0 w-full z-50 backdrop-blur-xl bg-dark-950 bg-opacity-75 border-b border-white border-opacity-10"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -19,25 +19,30 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div className="flex-shrink-0" whileHover={{ scale: 1.05 }}>
-            <a href="#" className="flex items-center gap-3">
-              <img
-                src={logo}
-                alt={`${SITE_NAME} logo`}
-                className="h-10 w-10 object-contain rounded-full"
-              />
-              <span className="text-xl font-display font-bold gradient-text">
-                {SITE_NAME}
-              </span>
-            </a>
-          </motion.div>
+              <a href="#" className="flex items-center gap-3">
+                <img
+                  src={logo}
+                  alt={`${SITE_NAME} logo`}
+                  className="h-10 w-10 object-contain rounded-full border border-white border-opacity-20"
+                />
+                <div className="leading-tight">
+                  <span className="text-xl font-display font-bold gradient-text block">
+                    {SITE_NAME}
+                  </span>
+                  <span className="text-[11px] uppercase tracking-[0.22em] text-gray-400">
+                    Performance Studio
+                  </span>
+                </div>
+              </a>
+            </motion.div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:gap-8">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex md:items-center md:gap-8">
             {NAV_LINKS.map((link) => (
               <motion.a
                 key={link.label}
                 href={link.href}
-                className="text-gray-300 hover:text-primary transition-colors text-sm font-medium"
+                className="text-gray-300 hover:text-primary transition-colors text-sm font-medium tracking-wide"
                 whileHover={{ color: "#00d4ff" }}
               >
                 {link.label}
@@ -46,7 +51,11 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:flex md:items-center md:gap-4">
+          <div className="hidden md:flex md:items-center md:gap-3">
+            <div className="hidden lg:flex items-center gap-2 rounded-full px-3 py-2 premium-border text-xs text-gray-300">
+              <Sparkles size={14} className="text-accent" />
+              Elite Coaching
+            </div>
             <Button
               variant="primary"
               size="sm"
@@ -54,7 +63,7 @@ export const Navbar: React.FC = () => {
                 window.location.href = CONTACT.phoneLink;
               }}
             >
-              Call {CONTACT.phone}
+              Book a Call
             </Button>
           </div>
 
