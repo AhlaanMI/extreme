@@ -1,36 +1,43 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { TRAINERS } from "../../utils/constants";
+import { ArrowRight, Award, PhoneCall } from "lucide-react";
+import { Button } from "../ui/Button";
+import { CONTACT, TRAINERS } from "../../utils/constants";
 import { container, item } from "../../utils/animations";
 
 export const Trainers: React.FC = () => {
   return (
     <section
       id="trainers"
-      className="section bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950"
+      className="relative overflow-hidden bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 py-14 md:py-20 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute -top-10 left-1/4 h-64 w-64 rounded-full bg-primary opacity-10 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-accent opacity-10 blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-accent mb-4 inline-block">Coaching Team</div>
+          <div className="badge-accent mb-4 inline-block">Elite Coaching</div>
           <h2 className="section-title">
-            Meet Your <span className="gradient-text">Coaches</span>
+            Meet Your <span className="gradient-text">Head Coach</span>
           </h2>
           <p className="section-subtitle">
-            Friendly coaches for personal training, nutrition consulting, and
-            youth classes.
+            Championship-level achievements and 22 years of proven gym
+            leadership.
           </p>
         </motion.div>
 
-        {/* Trainers Grid */}
+        {/* Featured Coach */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 max-w-6xl mx-auto"
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -40,10 +47,10 @@ export const Trainers: React.FC = () => {
             <motion.div
               key={trainer.name}
               variants={item}
-              className="glass rounded-2xl overflow-hidden hover:shadow-glow-lg transition-all group"
+              className="glass rounded-3xl overflow-hidden hover:shadow-glow-lg transition-all group lg:grid lg:grid-cols-[0.85fr_1.15fr]"
             >
-              {/* Image */}
-              <div className="relative overflow-hidden aspect-square bg-dark-900">
+              {/* Visual */}
+              <div className="relative overflow-hidden aspect-[4/5] lg:aspect-[3/4] bg-dark-900 lg:max-w-[430px]">
                 <img
                   src={trainer.image}
                   alt={trainer.name}
@@ -51,31 +58,82 @@ export const Trainers: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
 
-                {/* Badge */}
-                <div className="absolute top-4 right-4 badge-accent text-xs">
-                  {trainer.specialty}
+                <div className="absolute top-4 left-4 badge-accent text-xs">
+                  Featured Coach
+                </div>
+
+                <div className="absolute bottom-4 left-4 right-4 premium-border rounded-2xl p-4">
+                  <p className="text-xs uppercase tracking-[0.18em] text-gray-300 mb-1">
+                    Specialty
+                  </p>
+                  <p className="text-white font-semibold">{trainer.specialty}</p>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-1 text-white">
-                  {trainer.name}
-                </h3>
-                <p className="text-primary text-sm font-semibold mb-3">
-                  {trainer.title}
-                </p>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {trainer.bio}
-                </p>
+              <div className="p-6 md:p-8 h-full flex flex-col">
+                <div>
+                  <h3 className="font-bold text-2xl mb-1 text-white">
+                    {trainer.name}
+                  </h3>
+                  <p className="text-primary text-sm font-semibold mb-4">
+                    {trainer.title}
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    {trainer.bio}
+                  </p>
 
-                {/* CTA */}
-                <motion.button
-                  className="w-full mt-4 py-2 rounded-lg bg-primary bg-opacity-10 text-primary hover:bg-opacity-20 transition-all text-sm font-semibold"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  Book Session
-                </motion.button>
+                  <div className="mt-6">
+                    <p className="text-white text-sm font-semibold mb-3 flex items-center gap-2">
+                      <Award size={16} className="text-accent" />
+                      Career Highlights
+                    </p>
+                    <div className="space-y-3">
+                      {trainer.achievements.map((achievement, index) => (
+                        <div
+                          key={achievement}
+                          className="premium-border rounded-xl px-4 py-3 text-sm text-gray-200"
+                        >
+                          <span className="text-primary font-semibold mr-2">
+                            {String(index + 1).padStart(2, "0")}.
+                          </span>
+                          {achievement}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <p className="mt-6 text-sm text-accent font-medium">
+                    Experience: {trainer.experience}
+                  </p>
+                </div>
+
+                <div className="mt-auto pt-6 flex flex-col sm:flex-row gap-3">
+                  <Button
+                    variant="primary"
+                    size="md"
+                    className="sm:flex-1"
+                    icon={<PhoneCall size={16} />}
+                    onClick={() => {
+                      window.location.href = CONTACT.phoneLink;
+                    }}
+                  >
+                    Call Coach
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="md"
+                    className="sm:flex-1"
+                    icon={<ArrowRight size={16} />}
+                    onClick={() =>
+                      document
+                        .getElementById("pricing")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                  >
+                    View Programs
+                  </Button>
+                </div>
               </div>
             </motion.div>
           ))}

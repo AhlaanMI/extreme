@@ -9,7 +9,6 @@ import { Transformation } from "./components/sections/Transformation";
 import { Trainers } from "./components/sections/Trainers";
 import { Pricing } from "./components/sections/Pricing";
 import { Testimonials } from "./components/sections/Testimonials";
-import { FAQSection } from "./components/sections/FAQ";
 import { FinalCTA } from "./components/sections/FinalCTA";
 
 function App() {
@@ -34,7 +33,6 @@ function App() {
         <Trainers />
         <Pricing />
         <Testimonials />
-        <FAQSection />
         <FinalCTA />
       </main>
       <Footer />

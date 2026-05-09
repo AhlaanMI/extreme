@@ -29,6 +29,8 @@ export interface Trainer {
   specialty: string;
   image: string;
   bio: string;
+  achievements: string[];
+  experience: string;
 }
 
 export interface FAQ {

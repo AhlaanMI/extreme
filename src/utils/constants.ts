@@ -1,3 +1,5 @@
+import coachImage from "../images/hero.jpeg";
+
 export const SITE_NAME = "Extreme Fitness Center";
 export const SITE_TAGLINE = "Premium Coaching. Measurable Results.";
 
@@ -11,10 +13,9 @@ export const CONTACT = {
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Coaches", href: "#trainers" },
+  { label: "Coach", href: "#trainers" },
   { label: "Training Options", href: "#pricing" },
   { label: "Testimonials", href: "#testimonials" },
-  { label: "FAQ", href: "#faq" },
 ];
 
 export const STATS = [
@@ -50,14 +51,22 @@ export const SERVICES = [
     icon: "Users",
     title: "Youth Classes",
     description: "Safe, energetic classes for young athletes and beginners.",
-    features: ["Age-appropriate workouts", "Confidence building", "Team energy"],
+    features: [
+      "Age-appropriate workouts",
+      "Confidence building",
+      "Team energy",
+    ],
   },
   {
     icon: "Trophy",
     title: "Body Building",
     description:
       "Focused strength and muscle-building programs for serious goals.",
-    features: ["Hypertrophy training", "Strength progression", "Technique coaching"],
+    features: [
+      "Hypertrophy training",
+      "Strength progression",
+      "Technique coaching",
+    ],
   },
   {
     icon: "Activity",
@@ -70,7 +79,11 @@ export const SERVICES = [
     icon: "Scale",
     title: "Weight Training",
     description: "Progressive resistance training to build strength safely.",
-    features: ["Beginner to advanced", "Safe lifting cues", "Progressive overload"],
+    features: [
+      "Beginner to advanced",
+      "Safe lifting cues",
+      "Progressive overload",
+    ],
   },
 ];
 
@@ -98,7 +111,11 @@ export const MEMBERSHIPS = [
     price: "Call",
     period: "for rates",
     description: "Safe, fun training for young athletes.",
-    features: ["Age-appropriate workouts", "Confidence building", "Team motivation"],
+    features: [
+      "Age-appropriate workouts",
+      "Confidence building",
+      "Team motivation",
+    ],
     cta: "View Schedule",
     highlighted: false,
   },
@@ -145,28 +162,17 @@ export const TESTIMONIALS = [
 
 export const TRAINERS = [
   {
-    name: "Head Coach",
-    title: "Personal Training",
-    specialty: "Strength & Conditioning",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-    bio: "Focused on safe, progressive training for all fitness levels.",
-  },
-  {
-    name: "Nutrition Coach",
-    title: "Nutrition Consulting",
-    specialty: "Healthy Habits",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
-    bio: "Guidance for sustainable nutrition and recovery routines.",
-  },
-  {
-    name: "Youth Coach",
-    title: "Youth Classes",
-    specialty: "Athletic Foundations",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-    bio: "Encourages confidence and proper form for young athletes.",
+    name: "D.P.I.N. Somarathna",
+    title: "Head Coach & Powerlifting Specialist",
+    specialty: "Powerlifting & Strength Coaching",
+    image: coachImage,
+    bio: "National and Asian-level powerlifting athlete with decades of hands-on coaching and gym leadership.",
+    achievements: [
+      "1997 - 1st Place, Sri Lanka Powerlifting Federation Novices Powerlifting Championship (Body weight: 56 kg).",
+      "1998 - Best Lifter, Sri Lanka Powerlifting Federation; set a squat record of 180 kg at 56 kg body weight.",
+      "1999 - Won the bronze medal in Asian powerlifting.",
+    ],
+    experience: "Own gym since 2004 - 22 years of coaching experience.",
   },
 ];
 
