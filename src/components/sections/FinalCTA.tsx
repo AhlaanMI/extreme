@@ -48,7 +48,12 @@ export const FinalCTA: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.div variants={container} initial="hidden" whileInView="visible" className="grid lg:grid-cols-2 gap-8 items-start">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            className="grid lg:grid-cols-2 gap-8 items-start"
+          >
             <motion.div variants={item} className="text-center lg:text-left">
               <div className="mb-6">
                 <Badge variant="accent" className="uppercase tracking-widest">
@@ -63,8 +68,9 @@ export const FinalCTA: React.FC = () => {
               </h2>
 
               <p className="text-xl text-gray-300 mb-8 max-w-xl">
-                From elite coaching services to premium perception, this experience is
-                designed to attract high-intent clients and convert faster.
+                From elite coaching services to premium perception, this
+                experience is designed to attract high-intent clients and
+                convert faster.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-start items-center">
@@ -112,7 +118,10 @@ export const FinalCTA: React.FC = () => {
                       placeholder="Full name"
                       value={formData.fullName}
                       onChange={(event) =>
-                        setFormData((current) => ({ ...current, fullName: event.target.value }))
+                        setFormData((current) => ({
+                          ...current,
+                          fullName: event.target.value,
+                        }))
                       }
                       className="w-full rounded-2xl border border-white/10 bg-transparent px-4 py-3 text-white placeholder:text-white/50 outline-none transition-all focus:border-primary focus:shadow-[0_0_0_6px_rgba(255,0,0,0.06)]"
                     />
@@ -121,7 +130,10 @@ export const FinalCTA: React.FC = () => {
                       type="date"
                       value={formData.date}
                       onChange={(event) =>
-                        setFormData((current) => ({ ...current, date: event.target.value }))
+                        setFormData((current) => ({
+                          ...current,
+                          date: event.target.value,
+                        }))
                       }
                       className="w-full rounded-2xl border border-white/10 bg-transparent px-4 py-3 text-white outline-none transition-all focus:border-primary focus:shadow-[0_0_0_6px_rgba(255,0,0,0.06)]"
                     />
@@ -132,7 +144,10 @@ export const FinalCTA: React.FC = () => {
                     placeholder="Phone number"
                     value={formData.phone}
                     onChange={(event) =>
-                      setFormData((current) => ({ ...current, phone: event.target.value }))
+                      setFormData((current) => ({
+                        ...current,
+                        phone: event.target.value,
+                      }))
                     }
                     className="w-full rounded-2xl border border-white/10 bg-transparent px-4 py-3 text-white placeholder:text-white/50 outline-none transition-all focus:border-primary focus:shadow-[0_0_0_6px_rgba(255,0,0,0.06)]"
                   />
@@ -140,7 +155,10 @@ export const FinalCTA: React.FC = () => {
                   <select
                     value={formData.packageName}
                     onChange={(event) =>
-                      setFormData((current) => ({ ...current, packageName: event.target.value }))
+                      setFormData((current) => ({
+                        ...current,
+                        packageName: event.target.value,
+                      }))
                     }
                     className="w-full appearance-none rounded-2xl border border-white/10 bg-transparent px-4 py-3 text-white outline-none transition-all focus:border-primary focus:shadow-[0_0_0_6px_rgba(255,0,0,0.06)]"
                   >
@@ -157,13 +175,20 @@ export const FinalCTA: React.FC = () => {
                     placeholder="Tell us about your goals, availability, and anything we should know"
                     value={formData.notes}
                     onChange={(event) =>
-                      setFormData((current) => ({ ...current, notes: event.target.value }))
+                      setFormData((current) => ({
+                        ...current,
+                        notes: event.target.value,
+                      }))
                     }
                     className="w-full rounded-2xl border border-white/10 bg-transparent px-4 py-3 text-white placeholder:text-white/50 outline-none transition-all resize-none focus:border-primary focus:shadow-[0_0_0_6px_rgba(255,0,0,0.06)]"
                   />
 
                   <div className="pt-2">
-                    <Button variant="primary" size="lg" className="w-full flex items-center justify-center gap-2">
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      className="w-full flex items-center justify-center gap-2"
+                    >
                       <MessageCircle size={18} />
                       Send via WhatsApp
                     </Button>
