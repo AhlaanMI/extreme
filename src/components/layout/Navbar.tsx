@@ -82,28 +82,28 @@ export const Navbar: React.FC = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="premium-border rounded-2xl p-4">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="block py-2 text-muted hover:text-primary transition-colors text-sm font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="pt-4">
-              <Button
-                variant="primary"
-                size="sm"
-                className="w-full"
-                onClick={() => {
-                  window.location.href = CONTACT.phoneLink;
-                }}
-              >
-                Call {CONTACT.phone}
-              </Button>
-            </div>
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="block py-2 text-muted hover:text-primary transition-colors text-sm font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <div className="pt-4">
+                <Button
+                  variant="primary"
+                  size="sm"
+                  className="w-full"
+                  onClick={() => {
+                    window.location.href = CONTACT.phoneLink;
+                  }}
+                >
+                  Call {CONTACT.phone}
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}

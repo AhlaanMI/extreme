@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-interface ButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onDrag"> {
+interface ButtonProps extends Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  "onDrag"
+> {
   variant?: "primary" | "secondary" | "outline" | "outline-accent";
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;

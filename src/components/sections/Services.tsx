@@ -27,10 +27,12 @@ export const Services: React.FC = () => {
           <div className="badge-accent mb-4 inline-block uppercase tracking-wider">
             Signature Systems
           </div>
-          <h2 className="section-title gradient-text">Programs That Deliver Results</h2>
+          <h2 className="section-title gradient-text">
+            Programs That Deliver Results
+          </h2>
           <p className="section-subtitle">
-            Every service is engineered to build strength, confidence, and visible
-            transformation with premium coaching quality.
+            Every service is engineered to build strength, confidence, and
+            visible transformation with premium coaching quality.
           </p>
         </motion.div>
 
@@ -42,9 +44,9 @@ export const Services: React.FC = () => {
           viewport={{ once: true }}
         >
           {SERVICES.map((service) => {
-            const IconComponent =
-              (LucideIcons[service.icon as keyof typeof LucideIcons] ||
-                LucideIcons.Dumbbell) as LucideIcon;
+            const IconComponent = (LucideIcons[
+              service.icon as keyof typeof LucideIcons
+            ] || LucideIcons.Dumbbell) as LucideIcon;
 
             return (
               <motion.div key={service.title} variants={item}>
@@ -57,7 +59,9 @@ export const Services: React.FC = () => {
                   <h3 className="text-lg font-bold mb-2 text-white tracking-tight">
                     {service.title}
                   </h3>
-                  <p className="text-muted mb-4 text-sm leading-6">{service.description}</p>
+                  <p className="text-muted mb-4 text-sm leading-6">
+                    {service.description}
+                  </p>
 
                   <div className="space-y-1.5">
                     {service.features.map((feature) => (
