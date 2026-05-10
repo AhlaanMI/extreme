@@ -4,13 +4,17 @@ import { CONTACT } from "../../utils/constants";
 
 export const Pricing: React.FC = () => {
   const packages = [
-    { name: "Monthly", registrationFee: "3500/=", amount: "6500/=" },
-    { name: "3 Month", registrationFee: "Free", amount: "16000/=" },
-    { name: "6 Month", registrationFee: "Free", amount: "32000/=" },
-    { name: "Annual", registrationFee: "Free", amount: "52000/=" },
-    { name: "School", registrationFee: "3500/=", amount: "5500/=" },
-    { name: "Couple package", registrationFee: "3500/=", amount: "12000/=" },
-    { name: "Day payment", registrationFee: "-", amount: "1000/=" },
+    { name: "Monthly", registrationFee: "LKR 3,500", amount: "LKR 6,500" },
+    { name: "3 Month", registrationFee: "Free", amount: "LKR 16,000" },
+    { name: "6 Month", registrationFee: "Free", amount: "LKR 32,000" },
+    { name: "Annual", registrationFee: "Free", amount: "LKR 52,000" },
+    { name: "School", registrationFee: "LKR 3,500", amount: "LKR 5,500" },
+    {
+      name: "Couple package",
+      registrationFee: "LKR 3,500",
+      amount: "LKR 12,000",
+    },
+    { name: "Day payment", registrationFee: "-", amount: "LKR 1,000" },
   ];
 
   return (
