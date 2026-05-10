@@ -6,9 +6,24 @@ export const SITE_TAGLINE = "Premium Coaching. Measurable Results.";
 export const CONTACT = {
   phone: "071 537 7857",
   phoneLink: "tel:0715377857",
+  whatsappLink: "https://wa.me/94715377857",
   addressLine1: "Welcome Tyre House, No 257, 3rd Floor",
   addressLine2: "New Kandy - Colombo Rd, Mawanella 71500",
 };
+
+export const BOOKING_PACKAGES = [
+  { name: "Monthly", registrationFee: "LKR 3,500", amount: "LKR 6,500" },
+  { name: "3 Month", registrationFee: "Free", amount: "LKR 16,000" },
+  { name: "6 Month", registrationFee: "Free", amount: "LKR 32,000" },
+  { name: "Annual", registrationFee: "Free", amount: "LKR 52,000" },
+  { name: "School", registrationFee: "LKR 3,500", amount: "LKR 5,500" },
+  {
+    name: "Couple package",
+    registrationFee: "LKR 3,500",
+    amount: "LKR 12,000",
+  },
+  { name: "Day payment", registrationFee: "-", amount: "LKR 1,000" },
+];
 
 export const NAV_LINKS = [
   { label: "About", href: "#about" },

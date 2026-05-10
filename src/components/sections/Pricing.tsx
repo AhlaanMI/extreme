@@ -1,21 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CONTACT } from "../../utils/constants";
+import { BOOKING_PACKAGES, CONTACT } from "../../utils/constants";
 
 export const Pricing: React.FC = () => {
-  const packages = [
-    { name: "Monthly", registrationFee: "LKR 3,500", amount: "LKR 6,500" },
-    { name: "3 Month", registrationFee: "Free", amount: "LKR 16,000" },
-    { name: "6 Month", registrationFee: "Free", amount: "LKR 32,000" },
-    { name: "Annual", registrationFee: "Free", amount: "LKR 52,000" },
-    { name: "School", registrationFee: "LKR 3,500", amount: "LKR 5,500" },
-    {
-      name: "Couple package",
-      registrationFee: "LKR 3,500",
-      amount: "LKR 12,000",
-    },
-    { name: "Day payment", registrationFee: "-", amount: "LKR 1,000" },
-  ];
+  const packages = BOOKING_PACKAGES;
 
   return (
     <section id="pricing" className="section">
