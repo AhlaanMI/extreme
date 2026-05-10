@@ -19,25 +19,25 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div className="flex-shrink-0" whileHover={{ scale: 1.05 }}>
-              <a href="#" className="flex items-center gap-3">
-                <img
-                  src={logo}
-                  alt={`${SITE_NAME} logo`}
-                  className="h-10 w-10 object-contain rounded-full border border-white border-opacity-20"
-                />
-                <div className="leading-tight">
-                  <span className="text-xl font-display font-bold gradient-text block">
-                    {SITE_NAME}
-                  </span>
-                  <span className="text-[11px] uppercase tracking-[0.22em] text-gray-400">
-                    Performance Studio
-                  </span>
-                </div>
-              </a>
-            </motion.div>
+            <a href="#" className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt={`${SITE_NAME} logo`}
+                className="h-10 w-10 object-contain rounded-full border border-white border-opacity-20"
+              />
+              <div className="leading-tight">
+                <span className="text-xl font-display font-bold gradient-text block">
+                  {SITE_NAME}
+                </span>
+                <span className="text-[11px] uppercase tracking-[0.22em] text-gray-400">
+                  Performance Studio
+                </span>
+              </div>
+            </a>
+          </motion.div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex md:items-center md:gap-8">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex md:items-center md:gap-8">
             {NAV_LINKS.map((link) => (
               <motion.a
                 key={link.label}

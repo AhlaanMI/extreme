@@ -30,11 +30,7 @@
         rgba(255, 0, 0, 0.12),
         transparent 40%
       ),
-      radial-gradient(
-        circle at 85% 25%,
-        rgba(139, 0, 0, 0.1),
-        transparent 38%
-      ),
+      radial-gradient(circle at 85% 25%, rgba(139, 0, 0, 0.1), transparent 38%),
       linear-gradient(180deg, #0b0b0b 0%, #141414 100%);
   }
 
