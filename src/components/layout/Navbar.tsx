@@ -10,7 +10,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 w-full z-50 backdrop-blur-xl bg-dark-950 bg-opacity-75 border-b border-white border-opacity-10"
+      className="fixed top-0 w-full z-50 backdrop-blur-xl bg-dark-950/80 border-b border-white/10"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -23,7 +23,7 @@ export const Navbar: React.FC = () => {
               <img
                 src={logo}
                 alt={`${SITE_NAME} logo`}
-                className="h-10 w-10 object-contain rounded-full border border-white border-opacity-20"
+                className="h-10 w-10 object-contain rounded-full border border-white/15 ring-soft"
               />
               <div className="leading-tight">
                 <span className="text-xl font-display font-bold gradient-text block">
@@ -42,8 +42,8 @@ export const Navbar: React.FC = () => {
               <motion.a
                 key={link.label}
                 href={link.href}
-                className="text-gray-300 hover:text-primary transition-colors text-sm font-medium tracking-wide"
-                whileHover={{ color: "#FF0000" }}
+                className="text-muted hover:text-primary transition-colors text-sm font-medium tracking-wide"
+                whileHover={{ color: "#ff1a1a" }}
               >
                 {link.label}
               </motion.a>
@@ -76,16 +76,17 @@ export const Navbar: React.FC = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <motion.div
-            className="md:hidden pb-4"
+            className="md:hidden pb-4 pt-2"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
+            <div className="premium-border rounded-2xl p-4">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="block py-2 text-gray-300 hover:text-primary transition-colors text-sm font-medium"
+                className="block py-2 text-muted hover:text-primary transition-colors text-sm font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -102,6 +103,7 @@ export const Navbar: React.FC = () => {
               >
                 Call {CONTACT.phone}
               </Button>
+            </div>
             </div>
           </motion.div>
         )}

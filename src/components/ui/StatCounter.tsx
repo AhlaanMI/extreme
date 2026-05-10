@@ -8,15 +8,11 @@ interface StatCounterProps {
 }
 
 export const StatCounter: React.FC<StatCounterProps> = ({ value, label }) => {
-  const [ref, count] = useCountUp(
-    typeof value === "string" ? parseInt(value) : value,
-    1500,
-  );
+  const numericValue = typeof value === "string" ? parseInt(value, 10) : value;
+  const [ref, count] = useCountUp(numericValue, 1500);
 
-  const displayValue =
-    typeof value === "string"
-      ? value
-      : `${count}${typeof value === "string" ? value.replace(/[0-9]/g, "") : ""}`;
+  const suffix = typeof value === "string" ? value.replace(/[0-9]/g, "") : "";
+  const displayValue = typeof value === "string" ? value : `${count}${suffix}`;
 
   return (
     <motion.div
