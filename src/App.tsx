@@ -5,7 +5,6 @@ import { Hero } from "./components/sections/Hero";
 import { TrustStrip } from "./components/sections/TrustStrip";
 import { About } from "./components/sections/About";
 import { Services } from "./components/sections/Services";
-import { Booking } from "./components/sections/Booking";
 import { Transformation } from "./components/sections/Transformation";
 import { Trainers } from "./components/sections/Trainers";
 import { Pricing } from "./components/sections/Pricing";
@@ -35,7 +34,6 @@ function App() {
         <Pricing />
         <Testimonials />
         <FinalCTA />
-        <Booking />
       </main>
       <Footer />
     </div>
