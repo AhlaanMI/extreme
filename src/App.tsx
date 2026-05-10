@@ -30,12 +30,12 @@ function App() {
         <TrustStrip />
         <About />
         <Services />
-        <Booking />
         <Transformation />
         <Trainers />
         <Pricing />
         <Testimonials />
         <FinalCTA />
+        <Booking />
       </main>
       <Footer />
     </div>

@@ -34,7 +34,10 @@ export const Booking: React.FC = () => {
   };
 
   return (
-    <section id="booking" className="section bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 relative overflow-hidden">
+    <section
+      id="booking"
+      className="section bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 relative overflow-hidden"
+    >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-10 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-accent/8 blur-3xl" />
@@ -55,7 +58,8 @@ export const Booking: React.FC = () => {
             Simple <span className="gradient-text">WhatsApp Form</span>
           </h2>
           <p className="section-subtitle mx-auto">
-            Fill in the form, choose your package, and send everything to us on WhatsApp in one tap.
+            Fill in the form, choose your package, and send everything to us on
+            WhatsApp in one tap.
           </p>
         </motion.div>
 
@@ -79,7 +83,10 @@ export const Booking: React.FC = () => {
                 placeholder="Full name"
                 value={formData.fullName}
                 onChange={(event) =>
-                  setFormData((current) => ({ ...current, fullName: event.target.value }))
+                  setFormData((current) => ({
+                    ...current,
+                    fullName: event.target.value,
+                  }))
                 }
                 className="w-full rounded-2xl border border-[#d7c9f0] bg-white px-5 py-4 text-[#1e1e1e] placeholder:text-[#9b9bb3] outline-none transition-all focus:border-primary focus:shadow-[0_0_0_4px_rgba(255,0,0,0.08)]"
               />
@@ -88,7 +95,10 @@ export const Booking: React.FC = () => {
                 type="date"
                 value={formData.date}
                 onChange={(event) =>
-                  setFormData((current) => ({ ...current, date: event.target.value }))
+                  setFormData((current) => ({
+                    ...current,
+                    date: event.target.value,
+                  }))
                 }
                 className="w-full rounded-2xl border border-[#d7c9f0] bg-white px-5 py-4 text-[#1e1e1e] outline-none transition-all focus:border-primary focus:shadow-[0_0_0_4px_rgba(255,0,0,0.08)]"
               />
@@ -99,7 +109,10 @@ export const Booking: React.FC = () => {
               placeholder="Phone number"
               value={formData.phone}
               onChange={(event) =>
-                setFormData((current) => ({ ...current, phone: event.target.value }))
+                setFormData((current) => ({
+                  ...current,
+                  phone: event.target.value,
+                }))
               }
               className="w-full rounded-2xl border border-[#d7c9f0] bg-white px-5 py-4 text-[#1e1e1e] placeholder:text-[#9b9bb3] outline-none transition-all focus:border-primary focus:shadow-[0_0_0_4px_rgba(255,0,0,0.08)]"
             />
@@ -108,7 +121,10 @@ export const Booking: React.FC = () => {
               <select
                 value={formData.packageName}
                 onChange={(event) =>
-                  setFormData((current) => ({ ...current, packageName: event.target.value }))
+                  setFormData((current) => ({
+                    ...current,
+                    packageName: event.target.value,
+                  }))
                 }
                 className="w-full appearance-none rounded-2xl border border-[#d7c9f0] bg-white px-5 py-4 text-[#1e1e1e] outline-none transition-all focus:border-primary focus:shadow-[0_0_0_4px_rgba(255,0,0,0.08)]"
               >
@@ -126,7 +142,10 @@ export const Booking: React.FC = () => {
               placeholder="Tell us about your goals, availability, and anything we should know"
               value={formData.notes}
               onChange={(event) =>
-                setFormData((current) => ({ ...current, notes: event.target.value }))
+                setFormData((current) => ({
+                  ...current,
+                  notes: event.target.value,
+                }))
               }
               className="w-full rounded-2xl border border-[#d7c9f0] bg-white px-5 py-4 text-[#1e1e1e] placeholder:text-[#9b9bb3] outline-none transition-all resize-none focus:border-primary focus:shadow-[0_0_0_4px_rgba(255,0,0,0.08)]"
             />
