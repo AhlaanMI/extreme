@@ -43,7 +43,7 @@ export const Navbar: React.FC = () => {
                 key={link.label}
                 href={link.href}
                 className="text-gray-300 hover:text-primary transition-colors text-sm font-medium tracking-wide"
-                whileHover={{ color: "#00d4ff" }}
+                whileHover={{ color: "#FF0000" }}
               >
                 {link.label}
               </motion.a>

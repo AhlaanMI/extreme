@@ -1,0 +1,13 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { motion } from "framer-motion";
+import * as LucideIcons from "lucide-react";
+import { SERVICES } from "../../utils/constants";
+import { Card } from "../ui/Card";
+import { container, item } from "../../utils/animations";
+export const Services = () => {
+    return (_jsx("section", { id: "services", className: "section bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950", children: _jsxs("div", { className: "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8", children: [_jsxs(motion.div, { className: "text-center mb-16", initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.6 }, children: [_jsx("div", { className: "badge-accent mb-4 inline-block uppercase tracking-wider", children: "Signature Systems" }), _jsx("h2", { className: "section-title gradient-text", children: "Programs That Deliver Results" }), _jsx("p", { className: "section-subtitle", children: "Every service is engineered to build strength, confidence, and visible transformation with premium coaching quality." })] }), _jsx(motion.div, { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5", variants: container, initial: "hidden", whileInView: "visible", viewport: { once: true }, children: SERVICES.map((service) => {
+                        const IconComponent = LucideIcons[service.icon] ||
+                            LucideIcons.Dumbbell;
+                        return (_jsx(motion.div, { variants: item, children: _jsxs(Card, { className: "h-full premium-border hover:shadow-glow-lg hover:border-primary p-4", children: [_jsx("div", { className: "w-10 h-10 rounded-lg bg-primary bg-opacity-15 flex items-center justify-center mb-3 border border-primary border-opacity-30", children: _jsx(IconComponent, { className: "w-5 h-5 text-primary" }) }), _jsx("h3", { className: "text-lg font-bold mb-2 text-white", children: service.title }), _jsx("p", { className: "text-gray-300 mb-4 text-sm", children: service.description }), _jsx("div", { className: "space-y-1.5", children: service.features.map((feature) => (_jsxs("div", { className: "flex items-center gap-2", children: [_jsx("div", { className: "w-2 h-2 rounded-full bg-accent" }), _jsx("span", { className: "text-gray-300 text-xs", children: feature })] }, feature))) }), _jsx(motion.button, { className: "w-full mt-4 pt-4 border-t border-white border-opacity-10 text-primary font-semibold hover:text-accent transition-colors text-center uppercase tracking-wide text-xs", whileHover: { scale: 1.02 }, children: "Build My Plan \u2192" })] }) }, service.title));
+                    }) })] }) }));
+};

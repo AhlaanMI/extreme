@@ -88,7 +88,7 @@ export const hoverLift = {
 };
 
 export const hoverGlow = {
-  whileHover: { boxShadow: "0 0 40px rgba(0, 212, 255, 0.4)" },
+  whileHover: { boxShadow: "0 0 40px rgba(255, 0, 0, 0.38)" },
 };
 
 export const slideInRight = {

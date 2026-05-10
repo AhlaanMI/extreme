@@ -3,6 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-bg: 11 11 11;
+    --color-secondary-bg: 20 20 20;
+    --color-primary: 255 0 0;
+    --color-primary-light: 255 51 51;
+    --color-primary-dark: 139 0 0;
+    --color-accent: 139 0 0;
+    --color-accent-light: 163 0 0;
+    --color-accent-dark: 95 0 0;
+    --color-text: 255 255 255;
+    --color-muted: 179 179 179;
+    --color-border: 42 42 42;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -13,15 +27,15 @@
     background-image:
       radial-gradient(
         circle at 15% 10%,
-        rgba(0, 212, 255, 0.08),
+        rgba(255, 0, 0, 0.12),
         transparent 40%
       ),
       radial-gradient(
         circle at 85% 25%,
-        rgba(0, 255, 136, 0.05),
+        rgba(139, 0, 0, 0.1),
         transparent 38%
       ),
-      linear-gradient(180deg, #050505 0%, #090909 100%);
+      linear-gradient(180deg, #0b0b0b 0%, #141414 100%);
   }
 
   h1,
@@ -37,12 +51,16 @@
 @layer components {
   /* Glassmorphism */
   .glass {
-    @apply backdrop-blur-md bg-white bg-opacity-5 border border-white border-opacity-10;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    @apply backdrop-blur-md border;
+    background: rgba(20, 20, 20, 0.72);
+    border-color: rgb(var(--color-border) / 0.95);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
   .glass-dark {
-    @apply backdrop-blur-md bg-dark-900 bg-opacity-50 border border-white border-opacity-10;
+    @apply backdrop-blur-md border;
+    background: rgba(11, 11, 11, 0.84);
+    border-color: rgb(var(--color-border) / 0.95);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   }
 
@@ -70,21 +88,21 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-dark-950 hover:bg-primary-light glow-blue hover:glow-blue-lg;
-    background-image: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
-    box-shadow: 0 10px 32px rgba(0, 212, 255, 0.25);
+    @apply bg-primary text-white hover:bg-primary-light glow-blue hover:glow-blue-lg;
+    background-image: linear-gradient(135deg, #ff0000 0%, #8b0000 100%);
+    box-shadow: 0 10px 32px rgba(255, 0, 0, 0.22);
   }
 
   .btn-secondary {
-    @apply bg-accent text-dark-950 hover:bg-accent-light glow-accent;
+    @apply bg-accent text-white hover:bg-accent-light glow-accent;
   }
 
   .btn-outline {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-dark-950 hover:glow-blue-lg;
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white hover:glow-blue-lg;
   }
 
   .btn-outline-accent {
-    @apply border-2 border-accent text-accent hover:bg-accent hover:text-dark-950;
+    @apply border-2 border-accent text-accent hover:bg-accent hover:text-white;
   }
 
   /* Cards */
@@ -111,11 +129,13 @@
 
   /* Badges */
   .badge {
-    @apply inline-block px-3 py-1 rounded-full text-sm font-semibold glass;
+    @apply inline-block px-3 py-1 rounded-full text-sm font-semibold glass text-white;
   }
 
   .badge-accent {
-    @apply inline-block px-3 py-1 rounded-full text-sm font-semibold bg-accent bg-opacity-20 text-accent;
+    @apply inline-block px-3 py-1 rounded-full text-sm font-semibold text-accent;
+    background: rgba(139, 0, 0, 0.18);
+    border: 1px solid rgba(139, 0, 0, 0.28);
   }
 
   /* Container */
@@ -124,11 +144,12 @@
   }
 
   .premium-border {
-    @apply border border-white border-opacity-10;
+    @apply border;
+    border-color: rgb(var(--color-border) / 0.95);
     background: linear-gradient(
       160deg,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0.02) 40%,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.03) 40%,
       rgba(255, 255, 255, 0.01) 100%
     );
   }
@@ -181,20 +202,20 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(10, 10, 10);
+  background: rgb(11, 11, 11);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 212, 255, 0.3);
+  background: rgba(255, 0, 0, 0.35);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 212, 255, 0.5);
+  background: rgba(255, 0, 0, 0.55);
 }
 
 /* Selection styling */
 ::selection {
-  background-color: rgba(0, 212, 255, 0.3);
+  background-color: rgba(255, 0, 0, 0.32);
   color: white;
 }

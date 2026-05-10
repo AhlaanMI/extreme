@@ -6,20 +6,20 @@ export default {
     extend: {
       colors: {
         dark: {
-          50: "#f9fafb",
-          100: "#f3f4f6",
-          900: "#0a0a0a",
-          950: "#050505",
+          50: "rgb(var(--color-muted) / 0.1)",
+          100: "rgb(var(--color-muted) / 0.16)",
+          900: "rgb(var(--color-secondary-bg) / <alpha-value>)",
+          950: "rgb(var(--color-bg) / <alpha-value>)",
         },
         primary: {
-          DEFAULT: "#00d4ff",
-          light: "#33e0ff",
-          dark: "#0099cc",
+          DEFAULT: "rgb(var(--color-primary) / <alpha-value>)",
+          light: "rgb(var(--color-primary-light) / <alpha-value>)",
+          dark: "rgb(var(--color-primary-dark) / <alpha-value>)",
         },
         accent: {
-          DEFAULT: "#00ff88",
-          light: "#33ff99",
-          dark: "#00cc66",
+          DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
+          light: "rgb(var(--color-accent-light) / <alpha-value>)",
+          dark: "rgb(var(--color-accent-dark) / <alpha-value>)",
         },
       },
       fontFamily: {
@@ -66,9 +66,9 @@ export default {
         xs: "2px",
       },
       boxShadow: {
-        glow: "0 0 20px rgba(0, 212, 255, 0.3)",
-        "glow-lg": "0 0 40px rgba(0, 212, 255, 0.4)",
-        "glow-accent": "0 0 20px rgba(0, 255, 136, 0.3)",
+        glow: "0 0 20px rgba(255, 0, 0, 0.28)",
+        "glow-lg": "0 0 40px rgba(255, 0, 0, 0.38)",
+        "glow-accent": "0 0 20px rgba(139, 0, 0, 0.3)",
       },
     },
   },
