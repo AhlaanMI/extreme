@@ -1,11 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
-import { CONTACT, MEMBERSHIPS } from "../../utils/constants";
-import { Button } from "../ui/Button";
-import { container, item } from "../../utils/animations";
+import { CONTACT } from "../../utils/constants";
 
 export const Pricing: React.FC = () => {
+  const packages = [
+    { name: "Monthly", registrationFee: "3500/=", amount: "6500/=" },
+    { name: "3 Month", registrationFee: "Free", amount: "16000/=" },
+    { name: "6 Month", registrationFee: "Free", amount: "32000/=" },
+    { name: "Annual", registrationFee: "Free", amount: "52000/=" },
+    { name: "School", registrationFee: "3500/=", amount: "5500/=" },
+    { name: "Couple package", registrationFee: "3500/=", amount: "12000/=" },
+    { name: "Day payment", registrationFee: "-", amount: "1000/=" },
+  ];
+
   return (
     <section id="pricing" className="section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,77 +26,79 @@ export const Pricing: React.FC = () => {
         >
           <div className="badge-accent mb-4 inline-block">Training Options</div>
           <h2 className="section-title">
-            Choose Your <span className="gradient-text">Program</span>
+            Membership <span className="gradient-text">Packages</span>
           </h2>
           <p className="section-subtitle">
-            Call us for current rates and scheduling.
+            Organized fee structure for all membership options.
           </p>
         </motion.div>
 
-        {/* Pricing Cards */}
+        {/* Desktop Table */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
+          className="hidden md:block max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          {MEMBERSHIPS.map((membership, index) => (
-            <motion.div
-              key={membership.name}
-              variants={item}
-              className={`relative rounded-2xl transition-all ${
-                membership.highlighted ? "md:scale-105" : ""
-              }`}
+          <div className="glass rounded-2xl overflow-hidden border border-white border-opacity-20">
+            <table className="w-full text-left">
+              <thead className="bg-white bg-opacity-5">
+                <tr>
+                  <th className="px-6 py-4 text-sm uppercase tracking-wider text-gray-300">
+                    Package
+                  </th>
+                  <th className="px-6 py-4 text-sm uppercase tracking-wider text-gray-300">
+                    Registration fee
+                  </th>
+                  <th className="px-6 py-4 text-sm uppercase tracking-wider text-gray-300">
+                    Amount
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {packages.map((pkg) => (
+                  <tr
+                    key={pkg.name}
+                    className="border-t border-white border-opacity-10"
+                  >
+                    <td className="px-6 py-4 text-white font-semibold">
+                      {pkg.name}
+                    </td>
+                    <td className="px-6 py-4 text-gray-300">
+                      {pkg.registrationFee}
+                    </td>
+                    <td className="px-6 py-4 text-primary font-semibold">
+                      {pkg.amount}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
+
+        {/* Mobile Cards */}
+        <motion.div
+          className="grid grid-cols-1 gap-4 md:hidden max-w-md mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {packages.map((pkg) => (
+            <div
+              key={pkg.name}
+              className="glass rounded-xl p-4 border border-white border-opacity-15"
             >
-              {/* Glow Effect for Highlighted */}
-              {membership.highlighted && (
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl blur-lg opacity-20 -z-10"></div>
-              )}
-
-              <div
-                className={`glass rounded-2xl p-8 h-full flex flex-col ${membership.highlighted ? "border-primary" : "border-white"} border-opacity-30`}
-              >
-                {/* Header */}
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    {membership.name}
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    {membership.description}
-                  </p>
-                </div>
-
-                {/* Price */}
-                <div className="mb-6">
-                  <div className="text-5xl font-bold text-white">
-                    {membership.price}
-                    <span className="text-lg text-gray-400 font-normal">
-                      / {membership.period}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-3 mb-8 flex-grow">
-                  {membership.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span className="text-gray-300 text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA */}
-                <Button
-                  variant={membership.highlighted ? "primary" : "outline"}
-                  size="lg"
-                  className="w-full"
-                >
-                  {membership.cta}
-                </Button>
-              </div>
-            </motion.div>
+              <p className="text-white font-semibold mb-2">{pkg.name}</p>
+              <p className="text-sm text-gray-300">
+                Registration fee: {pkg.registrationFee}
+              </p>
+              <p className="text-sm text-primary font-semibold mt-1">
+                Amount: {pkg.amount}
+              </p>
+            </div>
           ))}
         </motion.div>
 

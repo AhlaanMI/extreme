@@ -11,7 +11,7 @@ export const Services: React.FC = () => {
       id="services"
       className="section bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -30,7 +30,7 @@ export const Services: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -43,27 +43,27 @@ export const Services: React.FC = () => {
 
             return (
               <motion.div key={service.title} variants={item}>
-                <Card className="h-full premium-border hover:shadow-glow-lg hover:border-primary">
-                  <div className="w-14 h-14 rounded-xl bg-primary bg-opacity-15 flex items-center justify-center mb-4 border border-primary border-opacity-30">
-                    <IconComponent className="w-7 h-7 text-primary" />
+                <Card className="h-full premium-border hover:shadow-glow-lg hover:border-primary p-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary bg-opacity-15 flex items-center justify-center mb-3 border border-primary border-opacity-30">
+                    <IconComponent className="w-5 h-5 text-primary" />
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-3 text-white">
+                  <h3 className="text-lg font-bold mb-2 text-white">
                     {service.title}
                   </h3>
-                  <p className="text-gray-300 mb-6">{service.description}</p>
+                  <p className="text-gray-300 mb-4 text-sm">{service.description}</p>
 
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     {service.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-accent"></div>
-                        <span className="text-gray-300 text-sm">{feature}</span>
+                        <span className="text-gray-300 text-xs">{feature}</span>
                       </div>
                     ))}
                   </div>
 
                   <motion.button
-                    className="w-full mt-6 pt-6 border-t border-white border-opacity-10 text-primary font-semibold hover:text-accent transition-colors text-center uppercase tracking-wide text-sm"
+                    className="w-full mt-4 pt-4 border-t border-white border-opacity-10 text-primary font-semibold hover:text-accent transition-colors text-center uppercase tracking-wide text-xs"
                     whileHover={{ scale: 1.02 }}
                   >
                     Build My Plan →

@@ -34,13 +34,6 @@ export const SERVICES = [
     features: ["Personalized coaching", "Flexible scheduling", "Goal tracking"],
   },
   {
-    icon: "Dumbbell",
-    title: "Personal Training",
-    description:
-      "Structured training plans with expert guidance to build strength and endurance.",
-    features: ["Custom training plan", "Form correction", "Progress check-ins"],
-  },
-  {
     icon: "Apple",
     title: "Nutrition Consulting",
     description:
