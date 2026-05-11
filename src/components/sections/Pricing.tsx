@@ -10,7 +10,13 @@ export const Pricing: React.FC = () => {
   }));
 
   return (
-    <section id="pricing" className="section">
+    <section
+      id="pricing"
+      className="section relative bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950"
+    >
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-0 right-1/4 h-72 w-72 rounded-full bg-primary/8 blur-3xl" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -20,7 +26,7 @@ export const Pricing: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-accent mb-4 inline-block">Training Options</div>
+          <div className="heading-eyebrow mb-4">Training Options</div>
           <h2 className="section-title">
             Membership <span className="gradient-text">Packages</span>
           </h2>
@@ -37,7 +43,7 @@ export const Pricing: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="glass rounded-2xl overflow-hidden border border-white border-opacity-20">
+          <div className="glass rounded-2xl overflow-hidden border border-white/20 noise-overlay">
             <table className="w-full text-left">
               <thead className="bg-white bg-opacity-5">
                 <tr>
@@ -59,7 +65,7 @@ export const Pricing: React.FC = () => {
                 {packages.map((pkg) => (
                   <tr
                     key={pkg.name}
-                    className={`border-t border-white border-opacity-10 ${pkg.isPopular ? "bg-primary/10" : ""}`}
+                    className={`border-t border-white/10 transition-colors hover:bg-white/5 ${pkg.isPopular ? "bg-primary/10 hover:bg-primary/15" : ""}`}
                   >
                     <td className="px-6 py-4 text-white font-semibold">
                       <div className="inline-flex items-center gap-2">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { TESTIMONIALS } from "../../utils/constants";
 import { Button } from "../ui/Button";
 
@@ -29,7 +29,7 @@ export const Testimonials: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-accent mb-4 inline-block">Testimonials</div>
+          <div className="heading-eyebrow mb-4">Testimonials</div>
           <h2 className="section-title">
             Hear From Our <span className="gradient-text">Members</span>
           </h2>
@@ -41,12 +41,13 @@ export const Testimonials: React.FC = () => {
 
         {/* Testimonial Slider */}
         <motion.div
-          className="glass rounded-2xl p-8 md:p-12 min-h-96 flex flex-col justify-center"
+          className="glass rounded-2xl p-8 md:p-12 min-h-96 flex flex-col justify-center relative overflow-hidden noise-overlay"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
+          <Quote className="absolute -top-4 -left-4 h-20 w-20 text-white/5" />
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -74,6 +75,7 @@ export const Testimonials: React.FC = () => {
                   src={testimonial.image}
                   alt={testimonial.name}
                   className="w-16 h-16 rounded-full object-cover border-2 border-primary"
+                  loading="lazy"
                 />
                 <div className="text-left">
                   <p className="font-semibold text-white">{testimonial.name}</p>

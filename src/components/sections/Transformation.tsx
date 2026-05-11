@@ -5,7 +5,11 @@ import { container, item } from "../../utils/animations";
 
 export const Transformation: React.FC = () => {
   return (
-    <section className="section">
+    <section className="section relative bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-14 left-0 h-72 w-72 rounded-full bg-primary/8 blur-3xl" />
+        <div className="absolute bottom-0 right-10 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -15,11 +19,11 @@ export const Transformation: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-accent mb-4 inline-block">Member Progress</div>
+          <div className="heading-eyebrow mb-4">Member Progress</div>
           <h2 className="section-title">
             Training <span className="gradient-text">Journeys</span>
           </h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle mx-auto">
             Consistent coaching and support help members build healthy habits.
           </p>
         </motion.div>
@@ -36,10 +40,11 @@ export const Transformation: React.FC = () => {
             <motion.div
               key={index}
               variants={item}
-              className="glass rounded-2xl overflow-hidden hover:shadow-glow-lg transition-all hover:-translate-y-1"
+              className="glass premium-border rounded-2xl overflow-hidden hover:shadow-glow-lg transition-all hover:-translate-y-1"
             >
               {/* Before/After Images */}
-              <div className="grid grid-cols-2 gap-2 p-4 bg-dark-900 bg-opacity-50">
+              <div className="relative grid grid-cols-2 gap-2 p-4 bg-dark-900 bg-opacity-50">
+                <div className="absolute left-1/2 top-4 bottom-4 w-px -translate-x-1/2 bg-white/10" />
                 <div>
                   <p className="text-xs text-gray-400 mb-2 font-semibold">
                     Before
@@ -48,6 +53,7 @@ export const Transformation: React.FC = () => {
                     src={transformation.before}
                     alt={`${transformation.name} before`}
                     className="w-full aspect-square object-cover rounded-lg"
+                    loading="lazy"
                   />
                 </div>
                 <div>
@@ -58,6 +64,7 @@ export const Transformation: React.FC = () => {
                     src={transformation.after}
                     alt={`${transformation.name} after`}
                     className="w-full aspect-square object-cover rounded-lg"
+                    loading="lazy"
                   />
                 </div>
               </div>

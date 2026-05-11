@@ -3,16 +3,23 @@ import { motion } from "framer-motion";
 import { useCountUp } from "../../hooks/useInView";
 
 interface StatCounterProps {
-  value: string | number;
+  value: number;
   label: string;
+  prefix?: string;
+  suffix?: string;
+  valueClassName?: string;
+  labelClassName?: string;
 }
 
-export const StatCounter: React.FC<StatCounterProps> = ({ value, label }) => {
-  const numericValue = typeof value === "string" ? parseInt(value, 10) : value;
-  const [ref, count] = useCountUp(numericValue, 1500);
-
-  const suffix = typeof value === "string" ? value.replace(/[0-9]/g, "") : "";
-  const displayValue = typeof value === "string" ? value : `${count}${suffix}`;
+export const StatCounter: React.FC<StatCounterProps> = ({
+  value,
+  label,
+  prefix = "",
+  suffix = "",
+  valueClassName = "",
+  labelClassName = "",
+}) => {
+  const [ref, count] = useCountUp(value, 1500);
 
   return (
     <motion.div
@@ -23,10 +30,16 @@ export const StatCounter: React.FC<StatCounterProps> = ({ value, label }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
-        {displayValue}
+      <div
+        className={`text-3xl md:text-4xl font-bold gradient-text mb-1 ${valueClassName}`}
+      >
+        {prefix}
+        {count}
+        {suffix}
       </div>
-      <div className="text-gray-400 text-sm md:text-base">{label}</div>
+      <div className={`text-gray-400 text-xs md:text-sm ${labelClassName}`}>
+        {label}
+      </div>
     </motion.div>
   );
 };

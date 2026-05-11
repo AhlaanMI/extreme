@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Check, Award, Users, Zap } from "lucide-react";
 import {
   slideInLeft,
@@ -9,6 +9,8 @@ import {
 } from "../../utils/animations";
 
 export const About: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   const benefits = [
     {
       icon: Award,
@@ -34,7 +36,7 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="section">
+    <section id="about" className="section relative">
       <div className="max-w-7xl mx-auto container-max">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left: Image */}
@@ -50,6 +52,7 @@ export const About: React.FC = () => {
                 src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop"
                 alt="State-of-the-art gym facility"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-accent/20"></div>
             </div>
@@ -57,8 +60,10 @@ export const About: React.FC = () => {
             {/* Floating Badge */}
             <motion.div
               className="absolute -bottom-6 -right-6 glass-dark rounded-xl p-6 w-48"
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
+              animate={shouldReduceMotion ? undefined : { y: [0, -12, 0] }}
+              transition={
+                shouldReduceMotion ? undefined : { duration: 3, repeat: Infinity }
+              }
             >
               <div className="text-3xl font-bold gradient-text mb-2">
                 All Ages
@@ -81,7 +86,7 @@ export const About: React.FC = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
             >
-              <span className="badge-accent uppercase tracking-wide">
+              <span className="heading-eyebrow">
                 Why Extreme Fitness Center
               </span>
             </motion.div>

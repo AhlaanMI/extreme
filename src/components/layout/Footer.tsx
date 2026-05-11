@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-dark-900 border-t border-white border-opacity-10">
+    <footer className="bg-gradient-to-b from-dark-950 to-dark-900 border-t border-white border-opacity-10 noise-overlay">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Content */}
         <motion.div
@@ -147,7 +147,7 @@ export const Footer: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="flex flex-col md:flex-row items-center justify-between">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-400 text-sm">
               © {currentYear} {SITE_NAME}. All rights reserved.
             </p>
@@ -171,6 +171,21 @@ export const Footer: React.FC = () => {
                 Cookies
               </a>
             </div>
+          </div>
+
+          {/* Built by Flowstack */}
+          <div className="flex items-center justify-center mt-6 pt-6 border-t border-white border-opacity-10">
+            <p className="text-gray-500 text-xs">
+              Built by{" "}
+              <a
+                href="https://flowstack.ink/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-accent transition-colors font-semibold"
+              >
+                Flowstack
+              </a>
+            </p>
           </div>
         </motion.div>
       </div>

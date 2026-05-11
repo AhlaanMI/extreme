@@ -1,5 +1,10 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import {
   ArrowRight,
   CheckCircle2,
@@ -12,8 +17,19 @@ import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
 import { container, item, fadeInUp } from "../../utils/animations";
 import { CONTACT } from "../../utils/constants";
+import { StatCounter } from "../ui/StatCounter";
+import heroImage from "../../images/1.jpg";
 
 export const Hero: React.FC = () => {
+  const mediaRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: mediaRef,
+    offset: ["start end", "end start"],
+  });
+  const mediaY = useTransform(scrollYProgress, [0, 1], [28, -28]);
+  const glowY = useTransform(scrollYProgress, [0, 1], [20, -20]);
+
   const proofPoints = [
     "Data-backed programming",
     "Elite coach supervision",
@@ -21,10 +37,16 @@ export const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+    <section className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden mesh-bg noise-overlay">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-primary opacity-20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-accent opacity-10 rounded-full blur-3xl" />
+        <motion.div
+          style={{ y: shouldReduceMotion ? 0 : glowY }}
+          className="absolute top-20 right-0 w-96 h-96 bg-primary opacity-20 rounded-full blur-3xl"
+        />
+        <motion.div
+          style={{ y: shouldReduceMotion ? 0 : mediaY }}
+          className="absolute bottom-0 left-1/2 w-96 h-96 bg-accent opacity-10 rounded-full blur-3xl"
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +65,7 @@ export const Hero: React.FC = () => {
 
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-5 leading-[1.04] text-balance"
+              className="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-5 leading-[1.02] text-balance tracking-tight"
             >
               Train Stronger.
               <br />
@@ -54,7 +76,7 @@ export const Hero: React.FC = () => {
 
             <motion.p
               variants={fadeInUp}
-              className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mb-7 text-balance"
+              className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mb-7 text-balance leading-relaxed"
             >
               Premium coaching, proven programming, and a high-performance
               environment built to deliver visible results from your first month.
@@ -109,32 +131,28 @@ export const Hero: React.FC = () => {
               className="mt-8 grid grid-cols-3 gap-3 max-w-xl"
             >
               <div className="premium-border rounded-xl px-3 py-3 text-center">
-                <p className="text-xl font-bold text-white">22+</p>
-                <p className="text-[11px] text-gray-400 uppercase tracking-wider">
-                  Years Coaching
-                </p>
+                <StatCounter value={22} suffix="+" label="Years Coaching" />
               </div>
               <div className="premium-border rounded-xl px-3 py-3 text-center">
-                <p className="text-xl font-bold text-white">7</p>
-                <p className="text-[11px] text-gray-400 uppercase tracking-wider">
-                  Training Tracks
-                </p>
+                <StatCounter value={7} label="Training Tracks" />
               </div>
               <div className="premium-border rounded-xl px-3 py-3 text-center">
-                <p className="text-xl font-bold text-white">1:1</p>
-                <p className="text-[11px] text-gray-400 uppercase tracking-wider">
-                  Expert Support
-                </p>
+                <StatCounter value={1} suffix=":1" label="Expert Support" />
               </div>
             </motion.div>
           </div>
 
-          <motion.div variants={fadeInUp}>
+          <motion.div
+            variants={fadeInUp}
+            ref={mediaRef}
+            style={{ y: shouldReduceMotion ? 0 : mediaY }}
+          >
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden premium-border">
               <img
-                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=600&fit=crop"
-                alt="Extreme Fitness Center training space"
+                src={heroImage}
+                alt="Extreme Fitness Center - Premium coaching environment"
                 className="w-full h-full object-cover"
+                loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950 via-opacity-30 to-transparent" />
 

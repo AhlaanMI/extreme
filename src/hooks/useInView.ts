@@ -59,19 +59,29 @@ export const useCountUp = (target: number, duration: number = 2000) => {
   useEffect(() => {
     if (!isVisible) return;
 
-    let current = 0;
-    const increment = target / (duration / 16);
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, 16);
+    let frameId = 0;
+    let startTime: number | null = null;
 
-    return () => clearInterval(timer);
+    const animate = (timestamp: number) => {
+      if (startTime === null) {
+        startTime = timestamp;
+      }
+
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+      setCount(Math.floor(target * easedProgress));
+
+      if (progress < 1) {
+        frameId = window.requestAnimationFrame(animate);
+      } else {
+        setCount(target);
+      }
+    };
+
+    frameId = window.requestAnimationFrame(animate);
+
+    return () => window.cancelAnimationFrame(frameId);
   }, [isVisible, target, duration]);
 
   return [ref, count] as const;

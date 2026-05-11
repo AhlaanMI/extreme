@@ -25,7 +25,7 @@ export const Trainers: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-accent mb-4 inline-block">Elite Coaching</div>
+          <div className="heading-eyebrow mb-4">Elite Coaching</div>
           <h2 className="section-title">
             Meet Your <span className="gradient-text">Head Coach</span>
           </h2>
@@ -47,7 +47,7 @@ export const Trainers: React.FC = () => {
             <motion.div
               key={trainer.name}
               variants={item}
-              className="glass rounded-3xl overflow-hidden hover:shadow-glow-lg transition-all group lg:grid lg:grid-cols-[0.85fr_1.15fr]"
+              className="glass rounded-3xl overflow-hidden hover:shadow-glow-lg transition-all group lg:grid lg:grid-cols-[0.85fr_1.15fr] noise-overlay"
             >
               {/* Visual */}
               <div className="relative overflow-hidden aspect-[4/5] lg:aspect-[3/4] bg-dark-900 lg:max-w-[430px]">
@@ -55,6 +55,7 @@ export const Trainers: React.FC = () => {
                   src={trainer.image}
                   alt={trainer.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
 
@@ -66,7 +67,9 @@ export const Trainers: React.FC = () => {
                   <p className="text-xs uppercase tracking-[0.18em] text-gray-300 mb-1">
                     Specialty
                   </p>
-                  <p className="text-white font-semibold">{trainer.specialty}</p>
+                  <p className="text-white font-semibold">
+                    {trainer.specialty}
+                  </p>
                 </div>
               </div>
 
@@ -79,9 +82,7 @@ export const Trainers: React.FC = () => {
                   <p className="text-primary text-sm font-semibold mb-4">
                     {trainer.title}
                   </p>
-                  <p className="text-gray-300 leading-relaxed">
-                    {trainer.bio}
-                  </p>
+                  <p className="text-gray-300 leading-relaxed">{trainer.bio}</p>
 
                   <div className="mt-6">
                     <p className="text-white text-sm font-semibold mb-3 flex items-center gap-2">
