@@ -61,7 +61,9 @@ export const Navbar: React.FC = () => {
               variant="primary"
               size="sm"
               onClick={() => {
-                window.location.href = CONTACT.phoneLink;
+                document
+                  .getElementById("final-cta")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
               Start Today
@@ -105,7 +107,10 @@ export const Navbar: React.FC = () => {
                     size="sm"
                     className="w-full"
                     onClick={() => {
-                      window.location.href = CONTACT.phoneLink;
+                      setIsOpen(false);
+                      document
+                        .getElementById("final-cta")
+                        ?.scrollIntoView({ behavior: "smooth" });
                     }}
                   >
                     Start with {CONTACT.phone}
