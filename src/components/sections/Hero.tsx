@@ -9,7 +9,6 @@ import {
   ArrowRight,
   CheckCircle2,
   MessageCircle,
-  ShieldCheck,
   Trophy,
   Zap,
 } from "lucide-react";
@@ -18,7 +17,7 @@ import { Badge } from "../ui/Badge";
 import { container, item, fadeInUp } from "../../utils/animations";
 import { CONTACT } from "../../utils/constants";
 import { StatCounter } from "../ui/StatCounter";
-import heroImage from "../../images/1.jpg";
+import heroImage from "../../images/2.avif";
 
 export const Hero: React.FC = () => {
   const mediaRef = useRef<HTMLDivElement>(null);
@@ -58,7 +57,10 @@ export const Hero: React.FC = () => {
         >
           <div>
             <motion.div variants={item} className="mb-5">
-              <Badge variant="accent" className="tracking-wide uppercase text-xs">
+              <Badge
+                variant="accent"
+                className="tracking-wide uppercase text-xs"
+              >
                 Elite Gym In Mawanella
               </Badge>
             </motion.div>
@@ -79,7 +81,8 @@ export const Hero: React.FC = () => {
               className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mb-7 text-balance leading-relaxed"
             >
               Premium coaching, proven programming, and a high-performance
-              environment built to deliver visible results from your first month.
+              environment built to deliver visible results from your first
+              month.
             </motion.p>
 
             <motion.div
@@ -151,18 +154,10 @@ export const Hero: React.FC = () => {
               <img
                 src={heroImage}
                 alt="Extreme Fitness Center - Premium coaching environment"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center brightness-110 contrast-110"
                 loading="eager"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950 via-opacity-30 to-transparent" />
-
-              <div className="absolute top-5 left-5 right-5 premium-border rounded-2xl px-4 py-3 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-white font-semibold text-sm">
-                  <ShieldCheck size={16} className="text-accent" />
-                  Proven Results System
-                </div>
-                <div className="text-xs text-gray-300">Since 2004</div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-950/20 via-dark-950/5 to-transparent" />
 
               <div className="absolute bottom-5 left-5 right-5 grid grid-cols-3 gap-3">
                 <div className="premium-border rounded-xl p-3">
