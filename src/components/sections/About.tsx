@@ -36,7 +36,7 @@ export const About: React.FC = () => {
   return (
     <section id="about" className="section">
       <div className="max-w-7xl mx-auto container-max">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left: Image */}
           <motion.div
             variants={slideInLeft}
@@ -45,7 +45,7 @@ export const About: React.FC = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative aspect-square rounded-2xl overflow-hidden">
+            <div className="relative aspect-square rounded-3xl overflow-hidden premium-border">
               <img
                 src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop"
                 alt="State-of-the-art gym facility"
@@ -81,14 +81,16 @@ export const About: React.FC = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
             >
-              <span className="badge-accent">Why Extreme Fitness Center</span>
+              <span className="badge-accent uppercase tracking-wide">
+                Why Extreme Fitness Center
+              </span>
             </motion.div>
 
             <h2 className="section-title mb-6">
               Built For <span className="gradient-text">Every Goal</span>
             </h2>
 
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+            <p className="text-gray-300 text-base sm:text-lg mb-8 leading-relaxed">
               Extreme Fitness Center in Mawanella offers private lessons,
               personal training, nutrition consulting, youth classes, body
               building, fitness training, and weight training. Our coaches focus
@@ -107,7 +109,7 @@ export const About: React.FC = () => {
                 <motion.div
                   key={benefit.title}
                   variants={item}
-                  className="flex gap-4"
+                  className="flex gap-4 premium-border rounded-2xl p-3 sm:p-4"
                 >
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary bg-opacity-20">

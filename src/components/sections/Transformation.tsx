@@ -26,7 +26,7 @@ export const Transformation: React.FC = () => {
 
         {/* Transformations Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -36,7 +36,7 @@ export const Transformation: React.FC = () => {
             <motion.div
               key={index}
               variants={item}
-              className="glass rounded-2xl overflow-hidden hover:shadow-glow-lg transition-all"
+              className="glass rounded-2xl overflow-hidden hover:shadow-glow-lg transition-all hover:-translate-y-1"
             >
               {/* Before/After Images */}
               <div className="grid grid-cols-2 gap-2 p-4 bg-dark-900 bg-opacity-50">

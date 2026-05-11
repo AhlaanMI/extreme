@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { TESTIMONIALS } from "../../utils/constants";
+import { Button } from "../ui/Button";
 
 export const Testimonials: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -32,6 +33,10 @@ export const Testimonials: React.FC = () => {
           <h2 className="section-title">
             Hear From Our <span className="gradient-text">Members</span>
           </h2>
+          <p className="section-subtitle mx-auto">
+            Real member stories from coaching programs built for measurable
+            progress.
+          </p>
         </motion.div>
 
         {/* Testimonial Slider */}
@@ -113,6 +118,18 @@ export const Testimonials: React.FC = () => {
             </div>
           </div>
         </motion.div>
+        <div className="mt-10 text-center">
+          <Button
+            variant="primary"
+            onClick={() =>
+              document
+                .getElementById("pricing")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            View Membership Packages
+          </Button>
+        </div>
       </div>
     </section>
   );

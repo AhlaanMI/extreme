@@ -1,9 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { BOOKING_PACKAGES, CONTACT } from "../../utils/constants";
+import { Button } from "../ui/Button";
 
 export const Pricing: React.FC = () => {
-  const packages = BOOKING_PACKAGES;
+  const packages = BOOKING_PACKAGES.map((pkg) => ({
+    ...pkg,
+    isPopular: pkg.name === "Annual",
+  }));
 
   return (
     <section id="pricing" className="section">
@@ -21,7 +25,7 @@ export const Pricing: React.FC = () => {
             Membership <span className="gradient-text">Packages</span>
           </h2>
           <p className="section-subtitle">
-            Organized fee structure for all membership options.
+            Transparent rates with no hidden costs.
           </p>
         </motion.div>
 
@@ -46,22 +50,35 @@ export const Pricing: React.FC = () => {
                   <th className="px-6 py-4 text-sm uppercase tracking-wider text-gray-300">
                     Amount
                   </th>
+                  <th className="px-6 py-4 text-sm uppercase tracking-wider text-gray-300 text-right">
+                    Value
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {packages.map((pkg) => (
                   <tr
                     key={pkg.name}
-                    className="border-t border-white border-opacity-10"
+                    className={`border-t border-white border-opacity-10 ${pkg.isPopular ? "bg-primary/10" : ""}`}
                   >
                     <td className="px-6 py-4 text-white font-semibold">
-                      {pkg.name}
+                      <div className="inline-flex items-center gap-2">
+                        {pkg.name}
+                        {pkg.isPopular && (
+                          <span className="badge-accent text-[10px] uppercase tracking-[0.18em]">
+                            Most Popular
+                          </span>
+                        )}
+                      </div>
                     </td>
                     <td className="px-6 py-4 text-gray-300">
                       {pkg.registrationFee}
                     </td>
                     <td className="px-6 py-4 text-primary font-semibold">
                       {pkg.amount}
+                    </td>
+                    <td className="px-6 py-4 text-right text-gray-300 text-sm">
+                      {pkg.isPopular ? "Best savings" : "-"}
                     </td>
                   </tr>
                 ))}
@@ -81,9 +98,16 @@ export const Pricing: React.FC = () => {
           {packages.map((pkg) => (
             <div
               key={pkg.name}
-              className="glass rounded-xl p-4 border border-white border-opacity-15"
+              className={`glass rounded-xl p-4 border border-white border-opacity-15 ${pkg.isPopular ? "border-primary/50 bg-primary/10" : ""}`}
             >
-              <p className="text-white font-semibold mb-2">{pkg.name}</p>
+              <p className="text-white font-semibold mb-2 flex items-center gap-2">
+                {pkg.name}
+                {pkg.isPopular && (
+                  <span className="badge-accent text-[10px] uppercase tracking-[0.18em]">
+                    Popular
+                  </span>
+                )}
+              </p>
               <p className="text-sm text-gray-300">
                 Registration fee: {pkg.registrationFee}
               </p>
@@ -102,9 +126,30 @@ export const Pricing: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <p className="text-gray-400 text-lg">
-            📞 Call {CONTACT.phone} for pricing details and availability.
+          <p className="text-gray-400 text-base sm:text-lg mb-5">
+            📞 Call {CONTACT.phone} for package recommendations and slot
+            availability.
           </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-3">
+            <Button
+              variant="primary"
+              onClick={() => {
+                window.location.href = CONTACT.phoneLink;
+              }}
+            >
+              Book Consultation Call
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Compare Programs
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>

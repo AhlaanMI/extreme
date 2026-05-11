@@ -1,10 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, type HTMLMotionProps } from "framer-motion";
 
-interface ButtonProps extends Omit<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  "onDrag"
-> {
+interface ButtonProps extends Omit<HTMLMotionProps<"button">, "children"> {
   variant?: "primary" | "secondary" | "outline" | "outline-accent";
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
@@ -41,7 +38,7 @@ export const Button: React.FC<ButtonProps> = ({
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       disabled={isLoading || props.disabled}
-      {...(props as any)}
+      {...props}
     >
       {isLoading ? (
         <div className="animate-spin">⏳</div>

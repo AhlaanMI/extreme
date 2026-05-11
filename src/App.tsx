@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { PhoneCall } from "lucide-react";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { Hero } from "./components/sections/Hero";
@@ -10,6 +11,7 @@ import { Trainers } from "./components/sections/Trainers";
 import { Pricing } from "./components/sections/Pricing";
 import { Testimonials } from "./components/sections/Testimonials";
 import { FinalCTA } from "./components/sections/FinalCTA";
+import { CONTACT } from "./utils/constants";
 
 function App() {
   useEffect(() => {
@@ -27,15 +29,34 @@ function App() {
       <main className="pt-20">
         <Hero />
         <TrustStrip />
-        <About />
-        <Services />
-        <Transformation />
-        <Trainers />
-        <Pricing />
-        <Testimonials />
+        <div className="section-divider">
+          <About />
+        </div>
+        <div className="section-divider">
+          <Services />
+        </div>
+        <div className="section-divider">
+          <Transformation />
+        </div>
+        <div className="section-divider">
+          <Trainers />
+        </div>
+        <div className="section-divider">
+          <Pricing />
+        </div>
+        <div className="section-divider">
+          <Testimonials />
+        </div>
         <FinalCTA />
       </main>
       <Footer />
+      <a
+        href={CONTACT.phoneLink}
+        className="fixed bottom-4 left-4 right-4 z-40 md:hidden btn btn-primary text-sm"
+      >
+        <PhoneCall size={16} />
+        Call Now
+      </a>
     </div>
   );
 }

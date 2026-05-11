@@ -35,7 +35,7 @@ export const FinalCTA: React.FC = () => {
   };
 
   return (
-    <section className="section bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950">
+    <section className="section relative bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary opacity-10 rounded-full blur-3xl" />
@@ -55,22 +55,21 @@ export const FinalCTA: React.FC = () => {
             className="grid lg:grid-cols-2 gap-8 items-start"
           >
             <motion.div variants={item} className="text-center lg:text-left">
-              <div className="mb-6">
+              <div className="mb-5">
                 <Badge variant="accent" className="uppercase tracking-widest">
-                  Ready to Dominate Your Category
+                  Start Your Transformation
                 </Badge>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white leading-tight">
-                Let&apos;s Build a Fitness Brand
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4 text-white leading-tight">
+                Let&apos;s Build Your
                 <br />
-                Clients Instantly Trust
+                Strongest Version Yet
               </h2>
 
-              <p className="text-xl text-gray-300 mb-8 max-w-xl">
-                From elite coaching services to premium perception, this
-                experience is designed to attract high-intent clients and
-                convert faster.
+              <p className="text-base sm:text-lg text-gray-300 mb-7 max-w-xl leading-relaxed">
+                Share your goals and we&apos;ll recommend the right plan, schedule,
+                and coaching path to help you progress faster and safely.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-start items-center">
@@ -81,7 +80,7 @@ export const FinalCTA: React.FC = () => {
                     window.location.href = CONTACT.phoneLink;
                   }}
                 >
-                  Start With a Call
+                  Book Your Free Consultation
                 </Button>
                 <Button
                   variant="outline"
@@ -92,7 +91,7 @@ export const FinalCTA: React.FC = () => {
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  View Signature Programs
+                  Explore Signature Programs
                 </Button>
               </div>
 
@@ -112,7 +111,7 @@ export const FinalCTA: React.FC = () => {
                     openWhatsApp();
                   }}
                 >
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <input
                       type="text"
                       placeholder="Full name"
@@ -162,7 +161,7 @@ export const FinalCTA: React.FC = () => {
                     }
                     className="w-full appearance-none rounded-2xl border border-white/10 bg-transparent px-4 py-3 text-white outline-none transition-all focus:border-primary focus:shadow-[0_0_0_6px_rgba(255,0,0,0.06)]"
                   >
-                    <option value="">Select service</option>
+                    <option value="">Select package</option>
                     {BOOKING_PACKAGES.map((pkg) => (
                       <option key={pkg.name} value={pkg.name}>
                         {pkg.name}

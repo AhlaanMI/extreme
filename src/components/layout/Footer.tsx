@@ -1,7 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
-import { CONTACT, NAV_LINKS, SITE_NAME, SITE_TAGLINE } from "../../utils/constants";
+import {
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  Twitter,
+  Linkedin,
+} from "lucide-react";
+import {
+  CONTACT,
+  NAV_LINKS,
+  SITE_NAME,
+  SITE_TAGLINE,
+} from "../../utils/constants";
+import { Button } from "../ui/Button";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -30,6 +43,17 @@ export const Footer: React.FC = () => {
               {SITE_NAME}
             </h3>
             <p className="text-gray-400 text-sm mb-4">{SITE_TAGLINE}</p>
+            <div className="mb-4">
+              <Button
+                variant="primary"
+                size="sm"
+                onClick={() => {
+                  window.location.href = CONTACT.phoneLink;
+                }}
+              >
+                Call to Join
+              </Button>
+            </div>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <motion.a

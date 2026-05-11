@@ -37,7 +37,7 @@ export const Services: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -50,7 +50,7 @@ export const Services: React.FC = () => {
 
             return (
               <motion.div key={service.title} variants={item}>
-                <Card className="h-full premium-border ring-soft hover:-translate-y-1 hover:border-primary/60 p-5 relative overflow-hidden">
+                <Card className="h-full premium-border ring-soft hover:-translate-y-1 hover:border-primary/60 p-5 relative overflow-hidden group">
                   <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
                   <div className="w-11 h-11 rounded-xl bg-primary/12 flex items-center justify-center mb-4 border border-primary/25 shadow-[0_10px_25px_rgba(255,0,0,0.08)]">
                     <IconComponent className="w-5 h-5 text-primary" />
@@ -73,7 +73,7 @@ export const Services: React.FC = () => {
                   </div>
 
                   <motion.button
-                    className="w-full mt-5 pt-4 border-t border-white/10 text-primary font-semibold hover:text-white transition-colors text-center uppercase tracking-[0.18em] text-[11px]"
+                    className="w-full mt-5 pt-4 border-t border-white/10 text-primary font-semibold group-hover:text-white transition-colors text-center uppercase tracking-[0.18em] text-[11px]"
                     whileHover={{ scale: 1.02 }}
                   >
                     Build My Plan →

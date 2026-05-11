@@ -6,7 +6,7 @@ export const SITE_TAGLINE = "Premium Coaching. Measurable Results.";
 export const CONTACT = {
   phone: "071 537 7857",
   phoneLink: "tel:0715377857",
-  whatsappLink: "https://wa.me/94715377857",
+  whatsappLink: "https://wa.me/94751377857",
   addressLine1: "Welcome Tyre House, No 257, 3rd Floor",
   addressLine2: "New Kandy - Colombo Rd, Mawanella 71500",
 };

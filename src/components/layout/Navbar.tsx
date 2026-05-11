@@ -10,7 +10,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 w-full z-50 backdrop-blur-xl bg-dark-950/80 border-b border-white/10"
+      className="fixed top-0 w-full z-50 backdrop-blur-xl bg-dark-950/78 border-b border-white/10 supports-[backdrop-filter]:bg-dark-950/60"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -30,7 +30,7 @@ export const Navbar: React.FC = () => {
                   {SITE_NAME}
                 </span>
                 <span className="text-[11px] uppercase tracking-[0.22em] text-gray-400">
-                  Performance Studio
+                  Strength & Conditioning
                 </span>
               </div>
             </a>
@@ -42,7 +42,7 @@ export const Navbar: React.FC = () => {
               <motion.a
                 key={link.label}
                 href={link.href}
-                className="text-muted hover:text-primary transition-colors text-sm font-medium tracking-wide"
+                className="text-muted hover:text-primary transition-colors text-sm font-medium tracking-wide relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all hover:after:w-full"
                 whileHover={{ color: "#ff1a1a" }}
               >
                 {link.label}
@@ -54,7 +54,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:flex md:items-center md:gap-3">
             <div className="hidden lg:flex items-center gap-2 rounded-full px-3 py-2 premium-border text-xs text-gray-300">
               <Sparkles size={14} className="text-accent" />
-              Elite Coaching
+              Limited Slots Open
             </div>
             <Button
               variant="primary"
@@ -63,12 +63,16 @@ export const Navbar: React.FC = () => {
                 window.location.href = CONTACT.phoneLink;
               }}
             >
-              Book a Call
+              Start Today
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 premium-border rounded-xl"
+            aria-label="Toggle menu"
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -101,7 +105,7 @@ export const Navbar: React.FC = () => {
                     window.location.href = CONTACT.phoneLink;
                   }}
                 >
-                  Call {CONTACT.phone}
+                  Start with {CONTACT.phone}
                 </Button>
               </div>
             </div>
