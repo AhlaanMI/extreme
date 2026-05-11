@@ -70,17 +70,10 @@ export const Testimonials: React.FC = () => {
               </blockquote>
 
               {/* Author */}
-              <div className="flex items-center justify-center gap-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-primary"
-                  loading="lazy"
-                />
-                <div className="text-left">
-                  <p className="font-semibold text-white">{testimonial.name}</p>
-                  <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                </div>
+              <div className="flex items-center justify-center">
+                <p className="font-semibold text-white text-lg">
+                  {testimonial.name}
+                </p>
               </div>
             </motion.div>
           </AnimatePresence>

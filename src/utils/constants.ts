@@ -131,39 +131,27 @@ export const MEMBERSHIPS = [
 
 export const TESTIMONIALS = [
   {
-    name: "Gym Member",
-    role: "Personal Training",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    name: "Mohamed Rifky",
     content:
-      "Friendly coaches and clear guidance. The personal training sessions keep me motivated and consistent.",
+      "One of the best gyms in Mawanella! Well-maintained equipment, clean environment, and very supportive trainers who guide you every step of the way. Great place for both beginners and experienced fitness enthusiasts.",
     rating: 5,
   },
   {
-    name: "Youth Parent",
-    role: "Youth Classes",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+    name: "Sanidu Abeywickrama",
     content:
-      "My child enjoys the youth classes and feels more confident every week.",
+      "If you are serious about getting fit and want a gym that offers both quality equipment and expert guidance, Extreme Fitness Center is the place to be. Highly recommend!",
     rating: 5,
   },
   {
-    name: "Private Client",
-    role: "Private Lessons",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+    name: "udara gunathilake",
     content:
-      "Private lessons helped me focus on form and make steady progress.",
+      "Extreme Fitness Center in Mawanella is a great place for anyone looking to stay fit. The gym has high-quality equipment, a clean environment, and a friendly atmosphere. Trainer and owner Nirosha ayya is very supportive and knowledgeable, helping members achieve their fitness goals.",
     rating: 5,
   },
   {
-    name: "Fitness Member",
-    role: "Fitness Training",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+    name: "chandima tharanga",
     content:
-      "Clean facility, supportive staff, and great training options for all levels.",
+      "The gym is well-maintained, not too crowded, and offers genuine supplements for those who need them. With excellent service and affordable pricing, it is a perfect place for workouts and bodybuilding. Highly recommended!",
     rating: 5,
   },
 ];
