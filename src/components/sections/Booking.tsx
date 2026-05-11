@@ -151,7 +151,12 @@ export const Booking: React.FC = () => {
             />
 
             <div className="pt-2">
-              <Button variant="primary" size="lg" className="px-6 sm:px-8">
+              <Button
+                variant="primary"
+                size="lg"
+                type="submit"
+                className="px-6 sm:px-8"
+              >
                 <MessageCircle size={18} />
                 Send via WhatsApp
               </Button>

@@ -52,7 +52,10 @@ export const FinalCTA: React.FC = () => {
             {/* Left: Copy & Social Proof */}
             <motion.div variants={item} className="text-center lg:text-left">
               <div className="mb-5 inline-block lg:inline">
-                <Badge variant="accent" className="uppercase tracking-widest text-xs">
+                <Badge
+                  variant="accent"
+                  className="uppercase tracking-widest text-xs"
+                >
                   🎯 Last Call This Month
                 </Badge>
               </div>
@@ -64,7 +67,8 @@ export const FinalCTA: React.FC = () => {
               </h2>
 
               <p className="text-base sm:text-lg text-gray-300 mb-3 leading-relaxed">
-                Join 200+ members who've already transformed their bodies and mindset. No experience needed—just commitment.
+                Join 200+ members who've already transformed their bodies and
+                mindset. No experience needed—just commitment.
               </p>
 
               <div className="mb-8 space-y-2">
@@ -88,7 +92,9 @@ export const FinalCTA: React.FC = () => {
 
               <div className="hidden lg:block p-4 rounded-2xl bg-white/5 border border-primary/20 mb-8">
                 <p className="text-sm text-gray-300">
-                  <span className="text-accent font-bold">✓ 97% member satisfaction</span>
+                  <span className="text-accent font-bold">
+                    ✓ 97% member satisfaction
+                  </span>
                   <br />
                   <span className="text-xs text-gray-400">
                     Based on 200+ transformations in 2024
@@ -124,7 +130,10 @@ export const FinalCTA: React.FC = () => {
             </motion.div>
 
             {/* Right: Simplified Form */}
-            <motion.div variants={item} className="lg:flex flex-col justify-center">
+            <motion.div
+              variants={item}
+              className="lg:flex flex-col justify-center"
+            >
               <div className="premium-border rounded-2xl p-6 md:p-8 bg-gradient-to-br from-white/[0.03] to-transparent">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <div className="w-1 h-6 bg-primary rounded-full" />
@@ -189,11 +198,9 @@ export const FinalCTA: React.FC = () => {
                   <Button
                     variant="primary"
                     size="lg"
+                    type="submit"
                     className="w-full flex items-center justify-center gap-2 mt-2"
                     disabled={!isFormValid}
-                    onClick={() => {
-                      openWhatsApp();
-                    }}
                   >
                     <MessageCircle size={18} />
                     Start on WhatsApp
@@ -204,6 +211,7 @@ export const FinalCTA: React.FC = () => {
                   <Button
                     variant="outline"
                     size="lg"
+                    type="button"
                     className="w-full flex items-center justify-center gap-2"
                     onClick={() => {
                       window.location.href = CONTACT.phoneLink;
@@ -220,7 +228,8 @@ export const FinalCTA: React.FC = () => {
                     🎁 First Month Discount
                   </p>
                   <p className="text-xs text-gray-300">
-                    Join this month and get 20% off your first month. Offer ends in 48 hours.
+                    Join this month and get 20% off your first month. Offer ends
+                    in 48 hours.
                   </p>
                 </div>
               </div>

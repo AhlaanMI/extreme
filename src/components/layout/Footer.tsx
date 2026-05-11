@@ -1,43 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Phone,
-  MapPin,
-  Facebook,
-  Instagram,
-  Twitter,
-  Linkedin,
-} from "lucide-react";
-import {
-  CONTACT,
-  NAV_LINKS,
-  SITE_NAME,
-  SITE_TAGLINE,
-} from "../../utils/constants";
+import { Phone, MapPin, Facebook } from "lucide-react";
+import { CONTACT, SITE_NAME, SITE_TAGLINE } from "../../utils/constants";
 import { Button } from "../ui/Button";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-  ];
+  const facebookLink =
+    "https://www.facebook.com/ExtremefitnesscentreMawanella/";
+  const mapsLink = "https://share.google/hTNpUpO8KrXqOmyVr";
 
   return (
     <footer className="bg-gradient-to-b from-dark-950 to-dark-900 border-t border-white border-opacity-10 noise-overlay">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Main Content */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          {/* Brand */}
           <div>
             <h3 className="text-xl font-display font-bold gradient-text mb-4">
               {SITE_NAME}
@@ -54,71 +36,30 @@ export const Footer: React.FC = () => {
                 Call to Join
               </Button>
             </div>
-            <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  className="text-gray-400 hover:text-primary transition-colors"
-                  whileHover={{ scale: 1.2 }}
-                >
-                  <social.icon size={20} />
-                </motion.a>
-              ))}
+            <div className="flex items-center gap-3">
+              <motion.a
+                href={facebookLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Extreme Fitness Center Facebook"
+                className="text-gray-300 hover:text-primary transition-colors"
+                whileHover={{ scale: 1.12 }}
+              >
+                <Facebook size={22} />
+              </motion.a>
+              <a
+                href={facebookLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-300 hover:text-primary transition-colors"
+              >
+                Follow us on Facebook
+              </a>
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4 text-white">Navigation</h4>
-            <ul className="space-y-2">
-              {NAV_LINKS.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-primary transition-colors text-sm"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Memberships */}
-          <div>
-            <h4 className="font-semibold mb-4 text-white">Training Options</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#pricing"
-                  className="text-gray-400 hover:text-primary transition-colors text-sm"
-                >
-                  Private Lessons
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#pricing"
-                  className="text-gray-400 hover:text-primary transition-colors text-sm"
-                >
-                  Personal Training
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#pricing"
-                  className="text-gray-400 hover:text-primary transition-colors text-sm"
-                >
-                  Youth Classes
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-semibold mb-4 text-white">Contact</h4>
+            <h4 className="font-semibold mb-4 text-white">Contact & Location</h4>
             <div className="space-y-3">
               <a
                 href={CONTACT.phoneLink}
@@ -129,17 +70,24 @@ export const Footer: React.FC = () => {
               </a>
               <div className="flex items-start gap-2 text-gray-400 text-sm">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>
-                  {CONTACT.addressLine1}
-                  <br />
-                  {CONTACT.addressLine2}
-                </span>
+                <div>
+                  <p className="text-white font-medium">Extreme Fitness Center</p>
+                  <p>{CONTACT.addressLine1}</p>
+                  <p>{CONTACT.addressLine2}</p>
+                </div>
               </div>
+              <a
+                href={mapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex text-sm text-primary hover:text-accent transition-colors"
+              >
+                View location on Google Maps
+              </a>
             </div>
           </div>
         </motion.div>
 
-        {/* Bottom */}
         <motion.div
           className="border-t border-white border-opacity-10 pt-8"
           initial={{ opacity: 0 }}
@@ -151,29 +99,9 @@ export const Footer: React.FC = () => {
             <p className="text-gray-400 text-sm">
               © {currentYear} {SITE_NAME}. All rights reserved.
             </p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-primary transition-colors text-sm"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-primary transition-colors text-sm"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-primary transition-colors text-sm"
-              >
-                Cookies
-              </a>
-            </div>
+            <p className="text-gray-500 text-xs">Mawanella, Sri Lanka</p>
           </div>
 
-          {/* Built by Flowstack */}
           <div className="flex items-center justify-center mt-6 pt-6 border-t border-white border-opacity-10">
             <p className="text-gray-500 text-xs">
               Built by{" "}

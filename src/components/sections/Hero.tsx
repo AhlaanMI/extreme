@@ -36,7 +36,10 @@ export const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden mesh-bg noise-overlay">
+    <section
+      id="hero"
+      className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden mesh-bg noise-overlay"
+    >
       <div className="absolute inset-0 -z-10">
         <motion.div
           style={{ y: shouldReduceMotion ? 0 : glowY }}

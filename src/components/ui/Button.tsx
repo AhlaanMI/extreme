@@ -12,6 +12,7 @@ interface ButtonProps extends Omit<HTMLMotionProps<"button">, "children"> {
 export const Button: React.FC<ButtonProps> = ({
   variant = "primary",
   size = "md",
+  type = "button",
   children,
   icon,
   isLoading = false,
@@ -34,6 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
+      type={type}
       className={`${baseClass} ${variantClass} ${sizeClass} ${className}`}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}

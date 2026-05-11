@@ -20,7 +20,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div className="flex-shrink-0" whileHover={{ scale: 1.05 }}>
-            <a href="#" className="flex items-center gap-3">
+            <a href="#hero" className="flex items-center gap-3">
               <img
                 src={logo}
                 alt={`${SITE_NAME} logo`}
