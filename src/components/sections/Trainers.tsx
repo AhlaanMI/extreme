@@ -29,7 +29,7 @@ export const Trainers: React.FC = () => {
           <h2 className="section-title">
             Meet Your <span className="gradient-text">Head Coach</span>
           </h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle mx-auto text-center">
             Championship-level achievements and 22 years of proven gym
             leadership.
           </p>

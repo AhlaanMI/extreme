@@ -30,7 +30,7 @@ export const Pricing: React.FC = () => {
           <h2 className="section-title">
             Membership <span className="gradient-text">Packages</span>
           </h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle mx-auto text-center">
             Transparent rates with no hidden costs.
           </p>
         </motion.div>
