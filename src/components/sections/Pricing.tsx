@@ -133,8 +133,8 @@ export const Pricing: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <p className="text-gray-400 text-base sm:text-lg mb-5">
-            📞 Call {CONTACT.phone} for package recommendations and slot
-            availability.
+            📞 Call {CONTACT.phone} or {CONTACT.secondaryPhone} for package
+            recommendations and slot availability.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <Button

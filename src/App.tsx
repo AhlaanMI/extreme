@@ -6,7 +6,6 @@ import { Hero } from "./components/sections/Hero";
 import { TrustStrip } from "./components/sections/TrustStrip";
 import { About } from "./components/sections/About";
 import { Services } from "./components/sections/Services";
-import { Transformation } from "./components/sections/Transformation";
 import { Trainers } from "./components/sections/Trainers";
 import { Pricing } from "./components/sections/Pricing";
 import { Testimonials } from "./components/sections/Testimonials";
@@ -37,9 +36,6 @@ function App() {
         </div>
         <div className="section-divider">
           <Services />
-        </div>
-        <div className="section-divider">
-          <Transformation />
         </div>
         <div className="section-divider">
           <Trainers />

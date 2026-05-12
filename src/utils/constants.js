@@ -4,7 +4,9 @@ export const SITE_TAGLINE = "Premium Coaching. Measurable Results.";
 export const CONTACT = {
   phone: "071 537 7857",
   phoneLink: "tel:0715377857",
-  whatsappLink: "https://wa.me/94715377857",
+  secondaryPhone: "075 137 7857",
+  secondaryPhoneLink: "tel:0751377857",
+  whatsappLink: "https://wa.me/94751377857",
   addressLine1: "Welcome Tyre House, No 257, 3rd Floor",
   addressLine2: "New Kandy - Colombo Rd, Mawanella 71500",
 };
@@ -169,7 +171,7 @@ export const FAQ = [
   },
   {
     question: "How do I book a private lesson or personal training?",
-    answer: `Call us at ${CONTACT.phone} and we will schedule a session that fits your goals.`,
+    answer: `Call us at ${CONTACT.phone} or ${CONTACT.secondaryPhone} and we will schedule a session that fits your goals.`,
   },
   {
     question: "Do you offer youth classes?",

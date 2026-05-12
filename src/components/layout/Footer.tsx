@@ -59,7 +59,9 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-white">Contact & Location</h4>
+            <h4 className="font-semibold mb-4 text-white">
+              Contact & Location
+            </h4>
             <div className="space-y-3">
               <a
                 href={CONTACT.phoneLink}
@@ -68,10 +70,19 @@ export const Footer: React.FC = () => {
                 <Phone size={16} />
                 {CONTACT.phone}
               </a>
+              <a
+                href={CONTACT.secondaryPhoneLink}
+                className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors text-sm"
+              >
+                <Phone size={16} />
+                {CONTACT.secondaryPhone}
+              </a>
               <div className="flex items-start gap-2 text-gray-400 text-sm">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-white font-medium">Extreme Fitness Center</p>
+                  <p className="text-white font-medium">
+                    Extreme Fitness Center
+                  </p>
                   <p>{CONTACT.addressLine1}</p>
                   <p>{CONTACT.addressLine2}</p>
                 </div>
