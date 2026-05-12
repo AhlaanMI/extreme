@@ -24,13 +24,12 @@ export const Services: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="heading-eyebrow mb-4">
-            Signature Systems
-          </div>
+          <div className="heading-eyebrow mb-4">Signature Systems</div>
           <h2 className="section-title text-balance">
-            Programs Built For <span className="gradient-text">Visible Results</span>
+            Programs Built For{" "}
+            <span className="gradient-text">Visible Results</span>
           </h2>
-          <p className="section-subtitle mx-auto">
+          <p className="section-subtitle mx-auto text-center">
             Every service is engineered to build strength, confidence, and
             visible transformation with premium coaching quality.
           </p>
