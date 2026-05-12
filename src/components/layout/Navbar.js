@@ -1,1 +1,20 @@
-export { Navbar } from "./Navbar.tsx";
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X, Sparkles } from "lucide-react";
+import { CONTACT, NAV_LINKS, SITE_NAME } from "../../utils/constants";
+import { Button } from "../ui/Button";
+import logo from "../../../logo.jpg";
+export const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (_jsxs(motion.nav, { className: "fixed top-0 w-full z-50 backdrop-blur-xl bg-dark-950/78 border-b border-white/10 supports-[backdrop-filter]:bg-dark-950/60", initial: { y: -100 }, animate: { y: 0 }, transition: { duration: 0.5 }, children: [_jsx("div", { className: "pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" }), _jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [_jsxs("div", { className: "flex items-center justify-between h-16 sm:h-20", children: [_jsx(motion.div, { className: "min-w-0 shrink pr-3", whileHover: { scale: 1.05 }, children: _jsxs("a", { href: "#hero", className: "flex max-w-full items-center gap-2 sm:gap-3", children: [_jsx("img", { src: logo, alt: `${SITE_NAME} logo`, className: "h-9 w-9 rounded-full border border-white/15 object-contain ring-soft sm:h-10 sm:w-10" }), _jsxs("div", { className: "min-w-0 leading-tight", children: [_jsx("span", { className: "gradient-text block truncate font-display text-sm font-bold sm:text-xl", children: SITE_NAME }), _jsx("span", { className: "hidden truncate text-[10px] uppercase tracking-[0.14em] text-gray-400 min-[420px]:block sm:text-[11px] sm:tracking-[0.22em]", children: "Strength & Conditioning" })] })] }) }), _jsx("div", { className: "hidden md:flex md:items-center md:gap-8", children: NAV_LINKS.map((link) => (_jsx(motion.a, { href: link.href, className: "text-muted hover:text-primary transition-colors text-sm font-medium tracking-wide relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all hover:after:w-full", whileHover: { color: "#ff1a1a" }, children: link.label }, link.label))) }), _jsxs("div", { className: "hidden md:flex md:items-center md:gap-3", children: [_jsxs("div", { className: "hidden lg:flex items-center gap-2 rounded-full px-3 py-2 premium-border text-xs text-gray-300", children: [_jsx(Sparkles, { size: 14, className: "text-accent" }), "Limited Slots Open"] }), _jsx(Button, { variant: "primary", size: "sm", onClick: () => {
+                                            document
+                                                .getElementById("final-cta")
+                                                ?.scrollIntoView({ behavior: "smooth" });
+                                        }, children: "Start Today" })] }), _jsx("button", { onClick: () => setIsOpen(!isOpen), className: "rounded-xl p-2.5 premium-border md:hidden sm:p-2", "aria-label": "Toggle menu", children: isOpen ? _jsx(X, { size: 22 }) : _jsx(Menu, { size: 22 }) })] }), _jsx(AnimatePresence, { children: isOpen && (_jsx(motion.div, { className: "md:hidden pb-4 pt-2", initial: { opacity: 0, y: -20 }, animate: { opacity: 1, y: 0 }, exit: { opacity: 0, y: -16 }, transition: { duration: 0.24 }, children: _jsxs("div", { className: "premium-border rounded-2xl p-4", children: [NAV_LINKS.map((link) => (_jsx("a", { href: link.href, className: "block py-2 text-muted hover:text-primary transition-colors text-sm font-medium", onClick: () => setIsOpen(false), children: link.label }, link.label))), _jsx("div", { className: "pt-4", children: _jsxs(Button, { variant: "primary", size: "sm", className: "w-full", onClick: () => {
+                                                setIsOpen(false);
+                                                document
+                                                    .getElementById("final-cta")
+                                                    ?.scrollIntoView({ behavior: "smooth" });
+                                            }, children: ["Start with ", CONTACT.phone] }) })] }) })) })] })] }));
+};

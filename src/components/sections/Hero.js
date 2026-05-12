@@ -1,1 +1,30 @@
-export { Hero } from "./Hero.tsx";
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useTransform, } from "framer-motion";
+import { ArrowRight, CheckCircle2, MessageCircle, Trophy, Zap, } from "lucide-react";
+import { Button } from "../ui/Button";
+import { Badge } from "../ui/Badge";
+import { container, item, fadeInUp } from "../../utils/animations";
+import { CONTACT } from "../../utils/constants";
+import { StatCounter } from "../ui/StatCounter";
+import heroImage from "../../images/2.avif";
+export const Hero = () => {
+    const mediaRef = useRef(null);
+    const shouldReduceMotion = useReducedMotion();
+    const { scrollYProgress } = useScroll({
+        target: mediaRef,
+        offset: ["start end", "end start"],
+    });
+    const mediaY = useTransform(scrollYProgress, [0, 1], [28, -28]);
+    const glowY = useTransform(scrollYProgress, [0, 1], [20, -20]);
+    const proofPoints = [
+        "Data-backed programming",
+        "Elite coach supervision",
+        "Nutrition + training alignment",
+    ];
+    return (_jsxs("section", { id: "hero", className: "relative min-h-screen overflow-hidden mesh-bg noise-overlay pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24", children: [_jsxs("div", { className: "absolute inset-0 -z-10", children: [_jsx(motion.div, { style: { y: shouldReduceMotion ? 0 : glowY }, className: "absolute right-0 top-16 h-64 w-64 rounded-full bg-primary opacity-20 blur-3xl sm:top-20 sm:h-80 sm:w-80 lg:h-96 lg:w-96" }), _jsx(motion.div, { style: { y: shouldReduceMotion ? 0 : mediaY }, className: "absolute bottom-0 left-1/2 h-64 w-64 rounded-full bg-accent opacity-10 blur-3xl sm:h-80 sm:w-80 lg:h-96 lg:w-96" })] }), _jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: _jsxs(motion.div, { className: "grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16", variants: container, initial: "hidden", animate: "visible", children: [_jsxs("div", { children: [_jsx(motion.div, { variants: item, className: "mb-5", children: _jsx(Badge, { variant: "accent", className: "tracking-wide uppercase text-xs", children: "Elite Gym In Mawanella" }) }), _jsxs(motion.h1, { variants: fadeInUp, className: "text-3xl sm:text-5xl md:text-7xl font-display font-bold mb-5 leading-tight sm:leading-[1.02] text-balance tracking-tight", children: ["Train Stronger.", _jsx("br", {}), _jsx("span", { className: "gradient-text", children: "Look Sharper." }), _jsx("br", {}), "Perform Better."] }), _jsx(motion.p, { variants: fadeInUp, className: "text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mb-7 text-balance leading-relaxed", children: "Premium coaching, proven programming, and a high-performance environment built to deliver visible results from your first month." }), _jsxs(motion.div, { variants: fadeInUp, className: "mb-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-start sm:gap-4", children: [_jsxs(Button, { variant: "primary", size: "lg", className: "group w-full sm:w-auto", onClick: () => document
+                                                .getElementById("services")
+                                                ?.scrollIntoView({ behavior: "smooth" }), children: ["Explore Programs", _jsx(ArrowRight, { className: "group-hover:translate-x-2 transition-transform", size: 20 })] }), _jsxs(Button, { variant: "secondary", size: "lg", className: "w-full sm:w-auto", onClick: () => {
+                                                window.location.href = CONTACT.phoneLink;
+                                            }, children: [_jsx(MessageCircle, { size: 18 }), "Call ", CONTACT.phone] })] }), _jsx(motion.div, { variants: fadeInUp, className: "space-y-3", children: proofPoints.map((point) => (_jsxs("div", { className: "flex items-start gap-3 text-sm text-gray-200 md:text-base", children: [_jsx(CheckCircle2, { className: "text-accent", size: 18 }), point] }, point))) }), _jsxs(motion.div, { variants: fadeInUp, className: "mt-8 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-3", children: [_jsx("div", { className: "premium-border rounded-xl px-3 py-3 text-center", children: _jsx(StatCounter, { value: 22, suffix: "+", label: "Years Coaching" }) }), _jsx("div", { className: "premium-border rounded-xl px-3 py-3 text-center", children: _jsx(StatCounter, { value: 7, label: "Training Tracks" }) }), _jsx("div", { className: "premium-border rounded-xl px-3 py-3 text-center", children: _jsx(StatCounter, { value: 1, suffix: ":1", label: "Expert Support" }) })] })] }), _jsx(motion.div, { variants: fadeInUp, ref: mediaRef, style: { y: shouldReduceMotion ? 0 : mediaY }, children: _jsxs("div", { className: "relative aspect-[4/5] rounded-3xl overflow-hidden premium-border", children: [_jsx("img", { src: heroImage, alt: "Extreme Fitness Center - Premium coaching environment", className: "w-full h-full object-cover object-center brightness-110 contrast-110", loading: "eager" }), _jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-dark-950/20 via-dark-950/5 to-transparent" }), _jsxs("div", { className: "absolute bottom-3 left-3 right-3 grid grid-cols-2 gap-2 sm:bottom-5 sm:left-5 sm:right-5 sm:grid-cols-3 sm:gap-3", children: [_jsxs("div", { className: "premium-border rounded-xl p-2.5 sm:p-3", children: [_jsx(Trophy, { size: 16, className: "mb-2 text-primary" }), _jsx("div", { className: "text-base font-bold text-white sm:text-xl", children: "7+" }), _jsx("p", { className: "text-xs text-gray-300", children: "Elite Programs" })] }), _jsxs("div", { className: "premium-border rounded-xl p-2.5 sm:p-3", children: [_jsx(Zap, { size: 16, className: "mb-2 text-primary" }), _jsx("div", { className: "text-base font-bold text-white sm:text-xl", children: "1:1" }), _jsx("p", { className: "text-xs text-gray-300", children: "Focused Coaching" })] }), _jsxs("div", { className: "premium-border rounded-xl p-2.5 sm:p-3", children: [_jsx(CheckCircle2, { size: 16, className: "mb-2 text-primary" }), _jsx("div", { className: "text-base font-bold text-white sm:text-xl", children: "All" }), _jsx("p", { className: "text-xs text-gray-300", children: "Fitness Levels" })] })] })] }) })] }) })] }));
+};

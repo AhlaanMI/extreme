@@ -54,22 +54,22 @@ export const UrgencyBanner: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="premium-border rounded-3xl p-6 md:p-10 mb-12 border-primary/40 bg-gradient-to-br from-primary/10 via-dark-900 to-dark-950"
+          className="mb-10 rounded-3xl border-primary/40 bg-gradient-to-br from-primary/10 via-dark-900 to-dark-950 p-5 premium-border sm:p-6 md:mb-12 md:p-10"
         >
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid items-center gap-6 md:grid-cols-2 md:gap-8">
             <div>
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="inline-block mb-4"
               >
-                <div className="flex items-center gap-2 text-accent font-bold text-lg">
+                <div className="flex items-center gap-2 text-base font-bold text-accent sm:text-lg">
                   <Clock size={20} />
                   <span>Limited Spots Available</span>
                 </div>
               </motion.div>
 
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="mb-4 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">
                 New Batch Starting
                 <br />
                 <span className="gradient-text">Next Monday</span>
@@ -84,7 +84,7 @@ export const UrgencyBanner: React.FC = () => {
                 with our head coach.
               </p>
 
-              <div className="flex items-center gap-3 mb-8 p-4 rounded-xl bg-white/5 border border-white/10">
+              <div className="mb-8 flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 sm:items-center">
                 <div className="w-3 h-3 rounded-full bg-accent animate-pulse" />
                 <p className="text-sm text-gray-300">
                   First session discount (20%) ends in 48 hours
@@ -109,10 +109,10 @@ export const UrgencyBanner: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="premium-border rounded-2xl p-6 md:p-8 bg-white/[0.02]"
+              className="rounded-2xl bg-white/[0.02] p-5 premium-border sm:p-6 md:p-8"
             >
               <div className="space-y-4">
-                <div className="flex items-start justify-between pb-4 border-b border-white/10">
+                <div className="flex flex-col gap-4 border-b border-white/10 pb-4 sm:flex-row sm:items-start sm:justify-between">
                   <div>
                     <p className="text-gray-400 text-sm mb-1">
                       Spots Remaining
@@ -167,7 +167,7 @@ export const UrgencyBanner: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="grid md:grid-cols-4 gap-4"
+          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
         >
           {trustItems.map((item, idx) => {
             const Icon = item.icon;

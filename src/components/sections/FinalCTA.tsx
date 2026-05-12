@@ -45,7 +45,7 @@ export const FinalCTA: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="premium-border rounded-3xl p-8 md:p-12 border-primary border-opacity-40 noise-overlay"
+          className="rounded-3xl border border-primary border-opacity-40 p-5 premium-border noise-overlay sm:p-8 md:p-12"
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -55,7 +55,7 @@ export const FinalCTA: React.FC = () => {
             variants={container}
             initial="hidden"
             whileInView="visible"
-            className="grid lg:grid-cols-2 gap-8 items-start"
+            className="grid items-start gap-6 sm:gap-8 lg:grid-cols-2"
           >
             <motion.div variants={item} className="text-center lg:text-left">
               <div className="mb-6">
@@ -64,22 +64,23 @@ export const FinalCTA: React.FC = () => {
                 </Badge>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white leading-tight">
+              <h2 className="mb-4 text-3xl font-display font-bold leading-tight text-white sm:text-4xl md:text-5xl">
                 Let&apos;s Build a Fitness Brand
                 <br />
                 Clients Instantly Trust
               </h2>
 
-              <p className="text-xl text-gray-300 mb-8 max-w-xl">
+              <p className="mb-8 max-w-xl text-base text-gray-300 sm:text-lg md:text-xl">
                 From elite coaching services to premium perception, this
                 experience is designed to attract high-intent clients and
                 convert faster.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-start items-center">
+              <div className="flex flex-col items-stretch justify-start gap-4 sm:flex-row sm:items-center">
                 <Button
                   variant="primary"
                   size="lg"
+                  className="w-full sm:w-auto"
                   onClick={() => {
                     window.location.href = CONTACT.phoneLink;
                   }}
@@ -89,6 +90,7 @@ export const FinalCTA: React.FC = () => {
                 <Button
                   variant="outline"
                   size="lg"
+                  className="w-full sm:w-auto"
                   onClick={() =>
                     document
                       .getElementById("services")
@@ -107,7 +109,7 @@ export const FinalCTA: React.FC = () => {
             </motion.div>
 
             <motion.div variants={item}>
-              <div className="premium-border rounded-2xl p-6 bg-transparent">
+              <div className="rounded-2xl bg-transparent p-4 premium-border sm:p-6">
                 <form
                   className="grid gap-4"
                   onSubmit={(event) => {

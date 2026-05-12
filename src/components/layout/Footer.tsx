@@ -12,9 +12,9 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-gradient-to-b from-dark-950 to-dark-900 border-t border-white border-opacity-10 noise-overlay">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12"
+          className="mb-10 grid grid-cols-1 gap-10 md:mb-12 md:grid-cols-2 md:gap-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                 Call to Join
               </Button>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <motion.a
                 href={facebookLink}
                 target="_blank"
@@ -106,8 +106,8 @@ export const Footer: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-400 text-sm">
+          <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
+            <p className="text-sm text-gray-400">
               © {currentYear} {SITE_NAME}. All rights reserved.
             </p>
             <p className="text-gray-500 text-xs">Mawanella, Sri Lanka</p>

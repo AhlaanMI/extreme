@@ -23,7 +23,7 @@ export const Testimonials: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="mb-12 text-center md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -41,7 +41,7 @@ export const Testimonials: React.FC = () => {
 
         {/* Testimonial Slider */}
         <motion.div
-          className="glass rounded-2xl p-8 md:p-12 min-h-96 flex flex-col justify-center relative overflow-hidden noise-overlay"
+          className="relative flex min-h-[22rem] flex-col justify-center overflow-hidden rounded-2xl glass p-5 sm:min-h-96 sm:p-8 md:p-12 noise-overlay"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -65,7 +65,7 @@ export const Testimonials: React.FC = () => {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-2xl md:text-3xl font-display text-white mb-8 leading-relaxed text-balance">
+              <blockquote className="mb-6 text-xl font-display leading-relaxed text-white text-balance sm:mb-8 sm:text-2xl md:text-3xl">
                 "{testimonial.content}"
               </blockquote>
 
@@ -79,7 +79,7 @@ export const Testimonials: React.FC = () => {
           </AnimatePresence>
 
           {/* Navigation */}
-          <div className="flex items-center justify-between mt-12 pt-8 border-t border-white border-opacity-10">
+          <div className="mt-8 flex flex-col gap-4 border-t border-white border-opacity-10 pt-6 sm:mt-12 sm:flex-row sm:items-center sm:justify-between sm:pt-8">
             <div className="flex gap-2">
               {TESTIMONIALS.map((_, index) => (
                 <motion.button
@@ -93,7 +93,7 @@ export const Testimonials: React.FC = () => {
               ))}
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex gap-3 self-end sm:self-auto">
               <motion.button
                 onClick={prev}
                 className="w-10 h-10 rounded-full glass flex items-center justify-center hover:border-primary transition-colors"

@@ -59,10 +59,12 @@ export const About: React.FC = () => {
 
             {/* Floating Badge */}
             <motion.div
-              className="absolute -bottom-6 -right-6 glass-dark rounded-xl p-6 w-48"
+              className="absolute bottom-4 right-4 w-40 rounded-xl p-4 glass-dark sm:-bottom-6 sm:-right-6 sm:w-48 sm:p-6"
               animate={shouldReduceMotion ? undefined : { y: [0, -12, 0] }}
               transition={
-                shouldReduceMotion ? undefined : { duration: 3, repeat: Infinity }
+                shouldReduceMotion
+                  ? undefined
+                  : { duration: 3, repeat: Infinity }
               }
             >
               <div className="text-3xl font-bold gradient-text mb-2">
@@ -114,7 +116,7 @@ export const About: React.FC = () => {
                 <motion.div
                   key={benefit.title}
                   variants={item}
-                  className="flex gap-4 premium-border rounded-2xl p-3 sm:p-4"
+                  className="flex gap-3 rounded-2xl p-3 premium-border sm:gap-4 sm:p-4"
                 >
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary bg-opacity-20">

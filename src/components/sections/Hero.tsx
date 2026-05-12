@@ -38,22 +38,22 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden mesh-bg noise-overlay"
+      className="relative min-h-screen overflow-hidden mesh-bg noise-overlay pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24"
     >
       <div className="absolute inset-0 -z-10">
         <motion.div
           style={{ y: shouldReduceMotion ? 0 : glowY }}
-          className="absolute top-20 right-0 w-96 h-96 bg-primary opacity-20 rounded-full blur-3xl"
+          className="absolute right-0 top-16 h-64 w-64 rounded-full bg-primary opacity-20 blur-3xl sm:top-20 sm:h-80 sm:w-80 lg:h-96 lg:w-96"
         />
         <motion.div
           style={{ y: shouldReduceMotion ? 0 : mediaY }}
-          className="absolute bottom-0 left-1/2 w-96 h-96 bg-accent opacity-10 rounded-full blur-3xl"
+          className="absolute bottom-0 left-1/2 h-64 w-64 rounded-full bg-accent opacity-10 blur-3xl sm:h-80 sm:w-80 lg:h-96 lg:w-96"
         />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          className="grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16"
           variants={container}
           initial="hidden"
           animate="visible"
@@ -70,7 +70,7 @@ export const Hero: React.FC = () => {
 
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-5 leading-[1.02] text-balance tracking-tight"
+              className="text-3xl sm:text-5xl md:text-7xl font-display font-bold mb-5 leading-tight sm:leading-[1.02] text-balance tracking-tight"
             >
               Train Stronger.
               <br />
@@ -90,12 +90,12 @@ export const Hero: React.FC = () => {
 
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start mb-8"
+              className="mb-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-start sm:gap-4"
             >
               <Button
                 variant="primary"
                 size="lg"
-                className="group"
+                className="group w-full sm:w-auto"
                 onClick={() =>
                   document
                     .getElementById("services")
@@ -111,6 +111,7 @@ export const Hero: React.FC = () => {
               <Button
                 variant="secondary"
                 size="lg"
+                className="w-full sm:w-auto"
                 onClick={() => {
                   window.location.href = CONTACT.phoneLink;
                 }}
@@ -124,7 +125,7 @@ export const Hero: React.FC = () => {
               {proofPoints.map((point) => (
                 <div
                   key={point}
-                  className="flex items-center gap-3 text-gray-200 text-sm md:text-base"
+                  className="flex items-start gap-3 text-sm text-gray-200 md:text-base"
                 >
                   <CheckCircle2 className="text-accent" size={18} />
                   {point}
@@ -134,7 +135,7 @@ export const Hero: React.FC = () => {
 
             <motion.div
               variants={fadeInUp}
-              className="mt-8 grid grid-cols-3 gap-3 max-w-xl"
+              className="mt-8 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-3"
             >
               <div className="premium-border rounded-xl px-3 py-3 text-center">
                 <StatCounter value={22} suffix="+" label="Years Coaching" />
@@ -162,20 +163,26 @@ export const Hero: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-950/20 via-dark-950/5 to-transparent" />
 
-              <div className="absolute bottom-5 left-5 right-5 grid grid-cols-3 gap-3">
-                <div className="premium-border rounded-xl p-3">
-                  <Trophy size={16} className="text-primary mb-2" />
-                  <div className="text-xl font-bold text-white">7+</div>
+              <div className="absolute bottom-3 left-3 right-3 grid grid-cols-2 gap-2 sm:bottom-5 sm:left-5 sm:right-5 sm:grid-cols-3 sm:gap-3">
+                <div className="premium-border rounded-xl p-2.5 sm:p-3">
+                  <Trophy size={16} className="mb-2 text-primary" />
+                  <div className="text-base font-bold text-white sm:text-xl">
+                    7+
+                  </div>
                   <p className="text-xs text-gray-300">Elite Programs</p>
                 </div>
-                <div className="premium-border rounded-xl p-3">
-                  <Zap size={16} className="text-primary mb-2" />
-                  <div className="text-xl font-bold text-white">1:1</div>
+                <div className="premium-border rounded-xl p-2.5 sm:p-3">
+                  <Zap size={16} className="mb-2 text-primary" />
+                  <div className="text-base font-bold text-white sm:text-xl">
+                    1:1
+                  </div>
                   <p className="text-xs text-gray-300">Focused Coaching</p>
                 </div>
-                <div className="premium-border rounded-xl p-3">
-                  <CheckCircle2 size={16} className="text-primary mb-2" />
-                  <div className="text-xl font-bold text-white">All</div>
+                <div className="premium-border rounded-xl p-2.5 sm:p-3">
+                  <CheckCircle2 size={16} className="mb-2 text-primary" />
+                  <div className="text-base font-bold text-white sm:text-xl">
+                    All
+                  </div>
                   <p className="text-xs text-gray-300">Fitness Levels</p>
                 </div>
               </div>

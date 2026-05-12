@@ -36,7 +36,7 @@ export const TrustStrip: React.FC = () => {
   return (
     <section className="py-10 md:py-14 border-y border-white border-opacity-10 bg-dark-900/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-gray-300 text-[11px] sm:text-xs mb-7 uppercase tracking-[0.28em] font-semibold">
+        <p className="mb-7 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-300 sm:text-xs sm:tracking-[0.28em]">
           Trusted by Beginners to Advanced Athletes
         </p>
 

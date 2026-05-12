@@ -17,20 +17,26 @@ export const Navbar: React.FC = () => {
     >
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <motion.div className="flex-shrink-0" whileHover={{ scale: 1.05 }}>
-            <a href="#hero" className="flex items-center gap-3">
+          <motion.div
+            className="min-w-0 shrink pr-3"
+            whileHover={{ scale: 1.05 }}
+          >
+            <a
+              href="#hero"
+              className="flex max-w-full items-center gap-2 sm:gap-3"
+            >
               <img
                 src={logo}
                 alt={`${SITE_NAME} logo`}
-                className="h-10 w-10 object-contain rounded-full border border-white/15 ring-soft"
+                className="h-9 w-9 rounded-full border border-white/15 object-contain ring-soft sm:h-10 sm:w-10"
               />
-              <div className="leading-tight">
-                <span className="text-xl font-display font-bold gradient-text block">
+              <div className="min-w-0 leading-tight">
+                <span className="gradient-text block truncate font-display text-sm font-bold sm:text-xl">
                   {SITE_NAME}
                 </span>
-                <span className="text-[11px] uppercase tracking-[0.22em] text-gray-400">
+                <span className="hidden truncate text-[10px] uppercase tracking-[0.14em] text-gray-400 min-[420px]:block sm:text-[11px] sm:tracking-[0.22em]">
                   Strength & Conditioning
                 </span>
               </div>
@@ -73,10 +79,10 @@ export const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 premium-border rounded-xl"
+            className="rounded-xl p-2.5 premium-border md:hidden sm:p-2"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
