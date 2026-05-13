@@ -38,7 +38,7 @@ export const About: React.FC = () => {
   return (
     <section id="about" className="section relative">
       <div className="max-w-7xl mx-auto container-max">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
           {/* Left: Image */}
           <motion.div
             variants={slideInLeft}
@@ -47,7 +47,7 @@ export const About: React.FC = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative aspect-square rounded-3xl overflow-hidden premium-border">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl premium-border sm:aspect-square">
               <img
                 src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop"
                 alt="State-of-the-art gym facility"
@@ -59,7 +59,7 @@ export const About: React.FC = () => {
 
             {/* Floating Badge */}
             <motion.div
-              className="absolute bottom-4 right-4 w-40 rounded-xl p-4 glass-dark sm:-bottom-6 sm:-right-6 sm:w-48 sm:p-6"
+              className="absolute bottom-4 right-4 w-36 rounded-xl p-3 glass-dark sm:-bottom-6 sm:-right-6 sm:w-48 sm:p-6"
               animate={shouldReduceMotion ? undefined : { y: [0, -12, 0] }}
               transition={
                 shouldReduceMotion
@@ -67,7 +67,7 @@ export const About: React.FC = () => {
                   : { duration: 3, repeat: Infinity }
               }
             >
-              <div className="text-3xl font-bold gradient-text mb-2">
+              <div className="mb-2 text-2xl font-bold gradient-text sm:text-3xl">
                 All Ages
               </div>
               <p className="text-sm text-gray-300">
@@ -93,11 +93,11 @@ export const About: React.FC = () => {
               </span>
             </motion.div>
 
-            <h2 className="section-title mb-6">
+            <h2 className="section-title mb-5 sm:mb-6">
               Built For <span className="gradient-text">Every Goal</span>
             </h2>
 
-            <p className="text-gray-300 text-base sm:text-lg mb-8 leading-relaxed">
+            <p className="mb-8 text-sm leading-relaxed text-gray-300 sm:text-lg">
               Extreme Fitness Center in Mawanella offers private lessons,
               personal training, nutrition consulting, youth classes, body
               building, fitness training, and weight training. Our coaches focus
@@ -116,18 +116,18 @@ export const About: React.FC = () => {
                 <motion.div
                   key={benefit.title}
                   variants={item}
-                  className="flex gap-3 rounded-2xl p-3 premium-border sm:gap-4 sm:p-4"
+                  className="flex min-w-0 gap-3 rounded-2xl p-3 premium-border sm:gap-4 sm:p-4"
                 >
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary bg-opacity-20">
                       <benefit.icon className="h-6 w-6 text-primary" />
                     </div>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-semibold text-white mb-1">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-sm text-gray-400">
                       {benefit.description}
                     </p>
                   </div>

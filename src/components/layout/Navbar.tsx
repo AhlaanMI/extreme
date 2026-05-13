@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Sparkles } from "lucide-react";
 import { CONTACT, NAV_LINKS, SITE_NAME } from "../../utils/constants";
@@ -8,6 +8,37 @@ import logo from "../../../logo.jpg";
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = isOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [isOpen]);
+
   return (
     <motion.nav
       className="fixed top-0 w-full z-50 backdrop-blur-xl bg-dark-950/78 border-b border-white/10 supports-[backdrop-filter]:bg-dark-950/60"
@@ -16,7 +47,7 @@ export const Navbar: React.FC = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <motion.div
@@ -81,6 +112,8 @@ export const Navbar: React.FC = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="rounded-xl p-2.5 premium-border md:hidden sm:p-2"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav-panel"
           >
             {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -89,41 +122,54 @@ export const Navbar: React.FC = () => {
         {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
-              className="md:hidden pb-4 pt-2"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.24 }}
-            >
-              <div className="premium-border rounded-2xl p-4">
-                {NAV_LINKS.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="block py-2 text-muted hover:text-primary transition-colors text-sm font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                ))}
-                <div className="pt-4">
-                  <Button
-                    variant="primary"
-                    size="sm"
-                    className="w-full"
-                    onClick={() => {
-                      setIsOpen(false);
-                      document
-                        .getElementById("final-cta")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                  >
-                    Start with {CONTACT.phone}
-                  </Button>
+            <>
+              <motion.button
+                type="button"
+                aria-label="Close menu"
+                onClick={() => setIsOpen(false)}
+                className="fixed inset-0 z-40 bg-dark-950/70 backdrop-blur-sm md:hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              />
+
+              <motion.div
+                id="mobile-nav-panel"
+                className="absolute inset-x-0 top-full z-50 pb-4 pt-2 md:hidden"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.24 }}
+              >
+                <div className="premium-border max-h-[calc(100svh-5.5rem)] overflow-y-auto rounded-2xl p-4">
+                  {NAV_LINKS.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="block py-2.5 text-sm font-medium text-muted transition-colors hover:text-primary"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                  <div className="pt-4">
+                    <Button
+                      variant="primary"
+                      size="sm"
+                      className="w-full"
+                      onClick={() => {
+                        setIsOpen(false);
+                        document
+                          .getElementById("final-cta")
+                          ?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                    >
+                      Start with {CONTACT.phone}
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>

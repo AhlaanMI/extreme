@@ -19,7 +19,7 @@ export const Trainers: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
-          className="text-center mb-10 md:mb-12"
+          className="mb-10 text-center md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -47,10 +47,10 @@ export const Trainers: React.FC = () => {
             <motion.div
               key={trainer.name}
               variants={item}
-              className="glass rounded-3xl overflow-hidden hover:shadow-glow-lg transition-all group lg:grid lg:grid-cols-[0.85fr_1.15fr] noise-overlay"
+              className="group overflow-hidden rounded-3xl glass transition-all noise-overlay hover:shadow-glow-lg lg:grid lg:grid-cols-[0.85fr_1.15fr]"
             >
               {/* Visual */}
-              <div className="relative overflow-hidden aspect-[4/5] lg:aspect-[3/4] bg-dark-900 lg:max-w-[430px]">
+              <div className="relative aspect-[4/5] overflow-hidden bg-dark-900 lg:aspect-[3/4] lg:max-w-[430px]">
                 <img
                   src={trainer.image}
                   alt={trainer.name}
@@ -74,15 +74,17 @@ export const Trainers: React.FC = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 md:p-8 h-full flex flex-col">
+              <div className="flex h-full flex-col p-5 sm:p-6 md:p-8">
                 <div>
-                  <h3 className="font-bold text-2xl mb-1 text-white">
+                  <h3 className="mb-1 text-xl font-bold text-white sm:text-2xl">
                     {trainer.name}
                   </h3>
                   <p className="text-primary text-sm font-semibold mb-4">
                     {trainer.title}
                   </p>
-                  <p className="text-gray-300 leading-relaxed">{trainer.bio}</p>
+                  <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
+                    {trainer.bio}
+                  </p>
 
                   <div className="mt-6">
                     <p className="text-white text-sm font-semibold mb-3 flex items-center gap-2">
@@ -93,7 +95,7 @@ export const Trainers: React.FC = () => {
                       {trainer.achievements.map((achievement, index) => (
                         <div
                           key={achievement}
-                          className="premium-border rounded-xl px-4 py-3 text-sm text-gray-200"
+                          className="premium-border rounded-xl px-4 py-3 text-sm text-gray-200 break-words"
                         >
                           <span className="text-primary font-semibold mr-2">
                             {String(index + 1).padStart(2, "0")}.

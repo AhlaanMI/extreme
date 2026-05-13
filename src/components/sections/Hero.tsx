@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen overflow-hidden mesh-bg noise-overlay pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24"
+      className="relative min-h-[calc(100svh-4rem)] overflow-hidden pb-14 pt-24 mesh-bg noise-overlay sm:min-h-screen sm:pb-16 sm:pt-28 md:pb-24 md:pt-36"
     >
       <div className="absolute inset-0 -z-10">
         <motion.div
@@ -70,7 +70,7 @@ export const Hero: React.FC = () => {
 
             <motion.h1
               variants={fadeInUp}
-              className="text-3xl sm:text-5xl md:text-7xl font-display font-bold mb-5 leading-tight sm:leading-[1.02] text-balance tracking-tight"
+              className="mb-5 text-balance font-display text-[clamp(2rem,9vw,4.5rem)] font-bold leading-tight tracking-tight sm:leading-[1.02]"
             >
               Train Stronger.
               <br />
@@ -81,7 +81,7 @@ export const Hero: React.FC = () => {
 
             <motion.p
               variants={fadeInUp}
-              className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mb-7 text-balance leading-relaxed"
+              className="mb-7 max-w-2xl text-balance text-sm leading-relaxed text-gray-300 sm:text-lg md:text-xl"
             >
               Premium coaching, proven programming, and a high-performance
               environment built to deliver visible results from your first
@@ -127,8 +127,11 @@ export const Hero: React.FC = () => {
                   key={point}
                   className="flex items-start gap-3 text-sm text-gray-200 md:text-base"
                 >
-                  <CheckCircle2 className="text-accent" size={18} />
-                  {point}
+                  <CheckCircle2
+                    className="mt-0.5 shrink-0 text-accent"
+                    size={18}
+                  />
+                  <span className="min-w-0">{point}</span>
                 </div>
               ))}
             </motion.div>
@@ -163,7 +166,7 @@ export const Hero: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-950/20 via-dark-950/5 to-transparent" />
 
-              <div className="absolute bottom-3 left-3 right-3 grid grid-cols-2 gap-2 sm:bottom-5 sm:left-5 sm:right-5 sm:grid-cols-3 sm:gap-3">
+              <div className="absolute bottom-3 left-3 right-3 grid grid-cols-1 gap-2 min-[380px]:grid-cols-2 sm:bottom-5 sm:left-5 sm:right-5 sm:grid-cols-3 sm:gap-3">
                 <div className="premium-border rounded-xl p-2.5 sm:p-3">
                   <Trophy size={16} className="mb-2 text-primary" />
                   <div className="text-base font-bold text-white sm:text-xl">

@@ -69,13 +69,13 @@ export const UrgencyBanner: React.FC = () => {
                 </div>
               </motion.div>
 
-              <h2 className="mb-4 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">
+              <h2 className="mb-4 text-[clamp(1.75rem,7vw,2.25rem)] font-bold leading-tight text-white md:text-4xl">
                 New Batch Starting
                 <br />
                 <span className="gradient-text">Next Monday</span>
               </h2>
 
-              <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+              <p className="mb-6 text-sm leading-relaxed text-gray-300 sm:text-base md:text-lg">
                 We're accepting only{" "}
                 <span className="text-accent font-semibold">
                   {Math.ceil(slotsLeft)} premium spots
@@ -121,7 +121,7 @@ export const UrgencyBanner: React.FC = () => {
                       {Math.ceil(slotsLeft)}
                     </p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-left sm:text-right">
                     <p className="text-gray-400 text-sm mb-1">Regular Price</p>
                     <p className="text-lg font-bold text-gray-400 line-through">
                       LKR 6,500

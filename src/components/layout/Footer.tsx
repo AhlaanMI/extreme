@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
             <h3 className="text-xl font-display font-bold gradient-text mb-4">
               {SITE_NAME}
             </h3>
-            <p className="text-gray-400 text-sm mb-4">{SITE_TAGLINE}</p>
+            <p className="mb-4 text-sm text-gray-400">{SITE_TAGLINE}</p>
             <div className="mb-4">
               <Button
                 variant="primary"
@@ -65,21 +65,21 @@ export const Footer: React.FC = () => {
             <div className="space-y-3">
               <a
                 href={CONTACT.phoneLink}
-                className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors text-sm"
+                className="flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-primary"
               >
                 <Phone size={16} />
                 {CONTACT.phone}
               </a>
               <a
                 href={CONTACT.secondaryPhoneLink}
-                className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors text-sm"
+                className="flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-primary"
               >
                 <Phone size={16} />
                 {CONTACT.secondaryPhone}
               </a>
-              <div className="flex items-start gap-2 text-gray-400 text-sm">
+              <div className="flex items-start gap-2 text-sm text-gray-400">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <div>
+                <div className="min-w-0 break-words">
                   <p className="text-white font-medium">
                     Extreme Fitness Center
                   </p>

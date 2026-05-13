@@ -41,7 +41,7 @@ export const Testimonials: React.FC = () => {
 
         {/* Testimonial Slider */}
         <motion.div
-          className="relative flex min-h-[22rem] flex-col justify-center overflow-hidden rounded-2xl glass p-5 sm:min-h-96 sm:p-8 md:p-12 noise-overlay"
+          className="relative flex min-h-[19rem] flex-col justify-center overflow-hidden rounded-2xl p-5 glass noise-overlay sm:min-h-96 sm:p-8 md:p-12"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -65,7 +65,7 @@ export const Testimonials: React.FC = () => {
               </div>
 
               {/* Quote */}
-              <blockquote className="mb-6 text-xl font-display leading-relaxed text-white text-balance sm:mb-8 sm:text-2xl md:text-3xl">
+              <blockquote className="mb-6 break-words text-balance font-display text-lg leading-relaxed text-white sm:mb-8 sm:text-2xl md:text-3xl">
                 "{testimonial.content}"
               </blockquote>
 
@@ -80,11 +80,12 @@ export const Testimonials: React.FC = () => {
 
           {/* Navigation */}
           <div className="mt-8 flex flex-col gap-4 border-t border-white border-opacity-10 pt-6 sm:mt-12 sm:flex-row sm:items-center sm:justify-between sm:pt-8">
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               {TESTIMONIALS.map((_, index) => (
                 <motion.button
                   key={index}
                   onClick={() => setCurrent(index)}
+                  aria-label={`Show testimonial ${index + 1}`}
                   className={`h-2 rounded-full transition-all ${
                     index === current ? "bg-primary w-8" : "bg-gray-600 w-2"
                   }`}
@@ -116,6 +117,7 @@ export const Testimonials: React.FC = () => {
         <div className="mt-10 text-center">
           <Button
             variant="primary"
+            className="w-full sm:w-auto"
             onClick={() =>
               document
                 .getElementById("pricing")

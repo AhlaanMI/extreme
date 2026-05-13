@@ -20,7 +20,7 @@ export const Pricing: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="mb-12 text-center sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -95,7 +95,7 @@ export const Pricing: React.FC = () => {
 
         {/* Mobile Cards */}
         <motion.div
-          className="grid grid-cols-1 gap-4 md:hidden max-w-md mx-auto"
+          className="mx-auto grid max-w-3xl grid-cols-1 gap-4 min-[520px]:grid-cols-2 md:hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -104,7 +104,7 @@ export const Pricing: React.FC = () => {
           {packages.map((pkg) => (
             <div
               key={pkg.name}
-              className={`glass rounded-xl p-4 border border-white border-opacity-15 ${pkg.isPopular ? "border-primary/50 bg-primary/10" : ""}`}
+              className={`glass rounded-xl border border-white border-opacity-15 p-4 ${pkg.isPopular ? "border-primary/50 bg-primary/10" : ""}`}
             >
               <p className="text-white font-semibold mb-2 flex items-center gap-2">
                 {pkg.name}
@@ -132,13 +132,14 @@ export const Pricing: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <p className="text-gray-400 text-base sm:text-lg mb-5">
+          <p className="mb-5 break-words text-base text-gray-400 sm:text-lg">
             📞 Call {CONTACT.phone} or {CONTACT.secondaryPhone} for package
             recommendations and slot availability.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <Button
               variant="primary"
+              className="w-full sm:w-auto"
               onClick={() => {
                 window.location.href = CONTACT.phoneLink;
               }}
@@ -147,6 +148,7 @@ export const Pricing: React.FC = () => {
             </Button>
             <Button
               variant="outline"
+              className="w-full sm:w-auto"
               onClick={() =>
                 document
                   .getElementById("services")

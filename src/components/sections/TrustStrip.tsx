@@ -34,14 +34,14 @@ export const TrustStrip: React.FC = () => {
   ];
 
   return (
-    <section className="py-10 md:py-14 border-y border-white border-opacity-10 bg-dark-900/40">
+    <section className="border-y border-white border-opacity-10 bg-dark-900/40 py-10 md:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="mb-7 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-300 sm:text-xs sm:tracking-[0.28em]">
+        <p className="mb-7 text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-gray-300 sm:text-xs sm:tracking-[0.24em]">
           Trusted by Beginners to Advanced Athletes
         </p>
 
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
+          className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:gap-6 md:grid-cols-4 md:gap-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -50,7 +50,7 @@ export const TrustStrip: React.FC = () => {
           {highlights.map((item, index) => (
             <motion.div
               key={index}
-              className="flex flex-col items-center justify-center premium-border rounded-xl p-5 sm:p-6 hover:border-primary/70 transition-colors"
+              className="flex flex-col items-center justify-center rounded-xl p-4 premium-border transition-colors hover:border-primary/70 sm:p-6"
               whileHover={{ y: -4 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export const TrustStrip: React.FC = () => {
                 valueClassName="text-2xl md:text-3xl mb-0"
                 labelClassName="uppercase tracking-[0.14em] text-[10px]"
               />
-              <div className="mt-2 text-[11px] sm:text-xs text-gray-300 text-center leading-relaxed">
+              <div className="mt-2 text-center text-[11px] leading-relaxed text-gray-300 sm:text-xs">
                 {item.subtitle}
               </div>
             </motion.div>

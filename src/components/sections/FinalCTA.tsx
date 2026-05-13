@@ -59,18 +59,21 @@ export const FinalCTA: React.FC = () => {
           >
             <motion.div variants={item} className="text-center lg:text-left">
               <div className="mb-6">
-                <Badge variant="accent" className="uppercase tracking-widest">
+                <Badge
+                  variant="accent"
+                  className="max-w-full whitespace-normal text-center text-[10px] uppercase leading-snug tracking-[0.14em] sm:text-xs sm:tracking-widest lg:text-left"
+                >
                   READY TO DOMINATE YOUR CATEGORY
                 </Badge>
               </div>
 
-              <h2 className="mb-4 text-3xl font-display font-bold leading-tight text-white sm:text-4xl md:text-5xl">
+              <h2 className="mb-4 font-display text-[clamp(1.875rem,8vw,3rem)] font-bold leading-tight text-white">
                 Let&apos;s Build a Fitness Brand
                 <br />
                 Clients Instantly Trust
               </h2>
 
-              <p className="mb-8 max-w-xl text-base text-gray-300 sm:text-lg md:text-xl">
+              <p className="mb-8 max-w-xl text-sm text-gray-300 sm:text-lg md:text-xl">
                 From elite coaching services to premium perception, this
                 experience is designed to attract high-intent clients and
                 convert faster.
@@ -117,7 +120,7 @@ export const FinalCTA: React.FC = () => {
                     openWhatsApp();
                   }}
                 >
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid gap-4 md:grid-cols-2">
                     <input
                       type="text"
                       placeholder="Full name"

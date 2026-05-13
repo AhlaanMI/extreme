@@ -18,7 +18,7 @@ export const Services: React.FC = () => {
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-16"
+          className="mb-12 text-center sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -36,7 +36,7 @@ export const Services: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 md:gap-6 lg:grid-cols-3"
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -49,30 +49,35 @@ export const Services: React.FC = () => {
 
             return (
               <motion.div key={service.title} variants={item}>
-                <Card className="h-full premium-border ring-soft hover:-translate-y-1 hover:border-primary/60 p-5 relative overflow-hidden group noise-overlay">
+                <Card className="group relative h-full overflow-hidden p-4 premium-border ring-soft noise-overlay hover:-translate-y-1 hover:border-primary/60 sm:p-5">
                   <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
                   <div className="w-11 h-11 rounded-xl bg-primary/12 flex items-center justify-center mb-4 border border-primary/25 shadow-[0_10px_25px_rgba(255,0,0,0.08)] group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                     <IconComponent className="w-5 h-5 text-primary" />
                   </div>
 
-                  <h3 className="text-lg font-bold mb-2 text-white tracking-tight">
+                  <h3 className="mb-2 text-base font-bold tracking-tight text-white sm:text-lg">
                     {service.title}
                   </h3>
-                  <p className="text-muted mb-4 text-sm leading-6">
+                  <p className="mb-4 text-sm leading-6 text-muted">
                     {service.description}
                   </p>
 
                   <div className="space-y-1.5">
                     {service.features.map((feature) => (
-                      <div key={feature} className="flex items-center gap-2">
+                      <div
+                        key={feature}
+                        className="flex min-w-0 items-start gap-2"
+                      >
                         <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_12px_rgba(255,0,0,0.45)]"></div>
-                        <span className="text-muted text-xs">{feature}</span>
+                        <span className="text-xs text-muted sm:text-sm">
+                          {feature}
+                        </span>
                       </div>
                     ))}
                   </div>
 
                   <motion.button
-                    className="w-full mt-5 pt-4 border-t border-white/10 text-primary font-semibold group-hover:text-white transition-colors text-center uppercase tracking-[0.18em] text-[11px]"
+                    className="mt-5 w-full border-t border-white/10 pt-4 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-primary transition-colors group-hover:text-white"
                     whileHover={{ scale: 1.02 }}
                   >
                     Build My Plan →

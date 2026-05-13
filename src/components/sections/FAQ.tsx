@@ -21,7 +21,7 @@ export const FAQSection: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="mb-12 text-center sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,12 +51,12 @@ export const FAQSection: React.FC = () => {
             <motion.div key={index} variants={item}>
               <motion.button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full premium-border rounded-2xl p-4 md:p-5 text-left hover:border-primary/60 transition-all group"
+                className="group w-full rounded-2xl p-4 text-left transition-all premium-border hover:border-primary/60 md:p-5"
                 whileHover={{ backgroundColor: "rgba(255, 0, 0, 0.02)" }}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
-                    <h3 className="font-semibold text-white text-base md:text-lg group-hover:text-primary transition-colors">
+                    <h3 className="text-base font-semibold text-white transition-colors group-hover:text-primary md:text-lg">
                       {faq.question}
                     </h3>
                   </div>
@@ -81,7 +81,7 @@ export const FAQSection: React.FC = () => {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <p className="text-gray-300 text-sm md:text-base mt-4 leading-relaxed">
+                      <p className="mt-4 text-sm leading-relaxed text-gray-300 md:text-base">
                         {faq.answer}
                       </p>
                     </motion.div>
@@ -103,10 +103,10 @@ export const FAQSection: React.FC = () => {
           <p className="text-gray-400 text-base sm:text-lg mb-8 font-medium">
             Still have questions? Let's talk.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 max-w-sm mx-auto">
+          <div className="mx-auto flex max-w-sm flex-col justify-center gap-3 sm:flex-row">
             <Button
               variant="primary"
-              className="flex items-center justify-center gap-2"
+              className="flex w-full items-center justify-center gap-2 sm:w-auto"
               onClick={() => {
                 window.location.href = CONTACT.whatsappLink;
               }}
@@ -116,7 +116,7 @@ export const FAQSection: React.FC = () => {
             </Button>
             <Button
               variant="outline"
-              className="flex items-center justify-center gap-2"
+              className="flex w-full items-center justify-center gap-2 sm:w-auto"
               onClick={() => {
                 window.location.href = CONTACT.phoneLink;
               }}
