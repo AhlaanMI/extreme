@@ -1,4 +1,4 @@
-import coachImage from "../images/hero.jpeg";
+import coachImage from "../images/hero.jpg";
 
 export const SITE_NAME = "Extreme Fitness Center";
 export const SITE_TAGLINE = "Premium Coaching. Measurable Results.";
